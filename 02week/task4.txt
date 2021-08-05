@@ -1,0 +1,15 @@
+/*Affects the whole document */
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif, Verdana, Geneva, Tahoma, sans-serif; /* Sets the font styles for the page. These are web safe fonts. */
+        }
+
+        /*To wrap the content of the whole page. */
+        #wrapper {
+            margin: auto;
+            width: 100%;
+            max-width: 100%;
+        }

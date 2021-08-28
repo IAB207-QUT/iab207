@@ -20,7 +20,7 @@ def create_app():
     return app
 
 '''
-(Task 3, second part of exercise: Run the application in VSC)
+(Part 2 of exercise: Run the application in VSC)
 
 Your directory should look like this after new file main.py added:
 project (folder)

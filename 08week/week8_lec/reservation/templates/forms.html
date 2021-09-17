@@ -1,0 +1,18 @@
+{% include "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<div class="page-header">
+    <h4>{{heading}}</h4>
+</div>
+
+
+
+<!-- Form rendering is simple and easy if using bootstrap -->
+<div class="col-md-6">
+{{wtf.quick_form(form)}}
+</div>
+
+
+
+{% endblock %}

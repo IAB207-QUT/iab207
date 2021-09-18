@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <!--Jumbotron-->
+      <div class="container">
+         <div class="row justify-content-center mt-5 pb-4">
+            <div class="col-md-8">
+               <div class="card shadow p-5 mb-5 bg-light">
+                  <h1 class="text-center mb-3">Find our best travel deals</h1>
+                  <form class="form-inline d-flex flex-nowrap">
+
+                     <select class="form-select" aria-label="Default select example">
+                        <option selected>Select a destination...</option>
+                        <option value="america">America</option>
+                        <option value="africa">Africa</option>
+                     </select>
+                     <button type="submit" class="flex-shrink-1 btn btn-primary ms-2">Submit</button>
+                  </form>
+
+               </div>
+            </div>
+         </div>
+      </div>
+{% endblock %}
+
+{% block content %}   
+      <div class="container">
+         <div class="row mt-5 mb-5 justify-content-center">
+            <div class="col-md-10">
+               <div class="media border p-3 d-flex justify-content-start">
+                  <img class="align-self-center me-3" style="max-width:120px"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png"
+                     alt="Planet Earth">
+                  <div class="align-self-center media-body">
+                     <h5 class="mt-0">Find the best destinations on earth</h5>
+                     <p class="d-none d-sm-block">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                        scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                        turpis. Fusce condimentum nunc ac nisi vulputate fringilla.</p>
+                     <a href="#" class="btn btn-primary">Join Now</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="card-group">
+            <div class="card mx-3">
+               <img class="card-img-top"
+                  src="https://media-cdn.tripadvisor.com/media/photo-s/0e/9c/a0/02/eiffel-tower.jpg" alt="France">
+               <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                  </p>
+               </div>
+               <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
+            </div>
+            <div class="card mx-3">
+               <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/12/44/87/23/london.jpg"
+                  alt="United Kingdom">
+               <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                  </p>
+               </div>
+               <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
+            </div>
+            <div class="card mx-3">
+               <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/12/44/6e/a0/rome.jpg"
+                  alt="Italy">
+               <div class="card-body">
+                  <h5 class="card-title">Nice place</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                  </p>
+               </div>
+               <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
+            </div>
+         </div>
+      </div>
+{% endblock %}

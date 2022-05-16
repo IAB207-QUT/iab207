@@ -13,14 +13,10 @@ def create_app():
     #A secret key for the session object
     app.secret_key='somerandomvalue'
 
-    #config upload folder
-    UPLOAD_FOLDER = '/static/image'
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
     #Configue and initialise DB
     app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///travel123.sqlite'
     db.init_app(app)
-    
+
     #add Blueprints
     from . import views
     app.register_blueprint(views.mainbp)
@@ -30,4 +26,3 @@ def create_app():
     app.register_blueprint(auth.bp)
 
     return app
-

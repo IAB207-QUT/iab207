@@ -1,22 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 db=SQLAlchemy()
+app=Flask(__name__)
 
 def create_app():
-    app=Flask(__name__)
-
+    
     #we use this utility module to display forms quickly
     bootstrap = Bootstrap(app)
 
     #A secret key for the session object
     app.secret_key='somerandomvalue'
-
-    #config upload folder
-    UPLOAD_FOLDER = '/static/image'
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
     #Configue and initialise DB
     app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///travel123.sqlite'
@@ -42,4 +38,9 @@ def create_app():
     app.register_blueprint(auth.bp)
 
     return app
+
+@app.errorhandler(404) 
+# inbuilt function which takes error as parameter 
+def not_found(e): 
+  return render_template("404.html")
 

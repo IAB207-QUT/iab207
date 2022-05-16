@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from .models import Destination, Comment
 from .forms import DestinationForm, CommentForm
-from . import db
+from . import db, app
 import os
 from werkzeug.utils import secure_filename
 #additional import:

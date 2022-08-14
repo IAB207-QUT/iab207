@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang='en'>
+​
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset='utf-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <!--Boostrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+      </script>
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+   <!-- Style -->
+   <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+      .withCSS {
+         position: relative;
+         background: #FFF;
+         font-family: 'Roboto', sans-serif;
+         font-weight: 400;
+         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+         transition: box-shadow 0.3s, background 0.3s;
+         border-radius: 20px;
+         border: 5px solid rgb(181, 164, 236);
+      }
+
+      .withCSS .background-image {
+         background-image:
+            linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgb(32, 13, 102)),
+            url('https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compre ss&cs=tinysrgb&w=1260&h=750&dpr=2');
+         background-size: 100%;
+         width: 100%;
+         height: 350px;
+         color: white;
+         padding: 20px;
+         border-radius: 15px 15px 0 0;
+      }
+
+      .withCSS:hover {
+         cursor: pointer;
+         background: #fee;
+         box-shadow: 0 8px 17px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.1);
+      }
+
+      .card-title-CSS {
+         position: absolute;
+         top: -30px;
+         left: 20px;
+         font-size: 3rem;
+         background: white;
+         border-radius: 10px;
+         padding: 5px 20px;
+         border: 5px solid rgb(181, 164, 236);
+      }
+
+      .card-title-CSS .title-text {
+         color: rgb(181, 164, 236);
+      }
+
+      .card-text-CSS {
+         color: rgb(181, 164, 236);
+         font-style: italic;
+         position: absolute;
+         bottom: 100px;
+         left: 20px;
+         font-size: 1.5rem;
+      }
+
+      .card-button-CSS {
+         text-decoration: none !important;
+         font-weight: 600;
+         text-transform: uppercase;
+         width: 100%;
+      }
+
+      .text-with-shadow {
+         text-shadow: 0 0 4px black;
+      }
+   </style>
+</head>
+​
+<div class="container">
+   <br>
+   <div class="row">
+      <div class="col-sm-6">
+         <div class="card" style="width: 18rem;">
+            <img
+               src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+               class="card-img-top" alt="...">
+            <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+               <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-6">
+         <div class="card withCSS">
+            <div class="background-image"></div>
+            <div class="card-body card-body-CSS">
+               <h5 class="card-title card-title-CSS">
+                  <div class="title-text">Card title</div>
+               </h5>
+               <p class="card-text card-text-CSS text-with-shadow">Some quick example text to build on the card title
+                  and make up the
+                  bulk of the
+                  card's content.</p>
+               <a href="#" class="btn btn-warning py-3 card-button-CSS">Go somewhere</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+</html>

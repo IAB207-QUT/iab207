@@ -1,127 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My Travel App">
+    <title>My Travel App</title>
+	
+	<style>
+	        /*Affects the whole document */
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif, Verdana, Geneva, Tahoma, sans-serif; /* Sets the font styles for the page. These are web safe fonts. */
+        }
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        /*To wrap the content of the whole page. */
+        #wrapper {
+            margin: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+	
+	/* creates a navbar with a black background and no bullets */
+	nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	}
+	
+	/* floats all the elements to the left */
+	nav ul li {
+	float: left;
+	}
+	
+	/* colors each link in the list item white and aligns */
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
+	nav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	}
+    
+	</style>
+</head>
 
-    <header>
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+<body>
+	
+	<div id="wrapper">
+    <!-- Contains the heading, navigation and banner image -->
+      <header>
+            <div id="navigationbar">
+                <div id="companyname">
+                    <a href="#">My Travel App</a>
+                </div>
+                <nav id="navigationmenu">
+                    <ul id="navigationlist">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#topdestinations">Top Destinations</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+                </nav>
             </div>
-          </nav>
+        </header>
 
-      <!--Jumbotron-->
-     <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-          <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron. It is used for calling extra attention to featured content or information. Previous versions of Bootstrap had a built in jumbotron class but this was dropped from version 5.</p>
-          <button class="btn btn-primary btn-lg" type="button">Example button</button>
-        </div>
-      </div>
-    </header>
-
+   
+    <!-- Contains the main content of the website, divided into sections -->
     <main>
-        <h1>Hello, world!</h1>
+        <section>
 
-        <div class="container-flex">
+            <div class="topdestinations-heading">
+                <h1>Top Destinations</h1>
+            </div>
 
-            <!-- first row -->
-            <div class="row">
-              <div class="col-12 col-sm-12 col-md-3">
-                Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-              </div>
-              <div class="col-12 col-sm-12 col-md-3">
-                Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-              </div>
-              <div class="col-12 col-sm-12 col-md-6">
-                Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-              </div>
-            </div> <!-- row end -->
+            <article>
+                <img src="https://content.web-repository.com/s/32278669173579735/uploads/Images/colosseum2-6858222.jpg"                    alt="Colosseum, Rome, Italy">
+                <h3>Italy</h3>
+                <p>Epicentre of the Roman Empire and birthplace of the Renaissance, this European virtuoso groans under the weight of its cultural cachet: it's here that you'll stand in the presence of Michelangelo's David and Sistine Chapel frescoes, Botticelli's Birth of Venus and Primavera and da Vinci's The Last Supper. In fact, Italy has more Unesco World Heritage cultural sites than any other country on Earth. Should you walk in the footsteps of ancient Romans in Pompeii, revel in Ravenna's glittering Byzantine treasures or get breathless over Giotto's revolutionary frescoes in Padua? It's a cultural conundrum as thrilling as it is overwhelming.</p>
+            </article>
 
-             <!-- second row -->
-            <div class="row">
-                <div class="col-sm-12">
-                  Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-            </div> <!-- row end -->
+            <article>
+                <img src="http://yourdream.s3.amazonaws.com/media/cache/8e/fa/8efa225540709ffd49ff9825547818cb.jpg"
+                        alt="Taj Mahal, Agra, India">
+                <h3>India</h3>
+                <p>India is a remarkable tourist destination with plethora of experiences to offer traveller of all kinds- The country inhouses everything from the 7th wonder of the world Taj Mahal, to artistic palaces and forts of India that were crafted hundreds of years ago, and still stand upright to narrate the testimony of time of India’s rich culture and history. It also withholds vast tract of forests that are home to many exquisite wildlife and showcasing bountiful nature at its best in its range of national parks and sanctuaries located across the length and breadth of the country.</p>
+            </article>
 
-            <!-- third row -->
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                  Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                  Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                  Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                    Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-            </div> <!-- row end -->
+            <article>
+                <img src="https://www.eastravel.co.uk/images/stories/flexicontent/l_fld125_beach-near-al-mughsayl-salalah.jpg"
+                        alt="Al Mukshail Beach, Salalah, Oman">
+                <h3>Oman</h3>
+                <p>For visitors, this offers a rare chance to engage with the Arab world without the distorting lens of excessive wealth. Oman's low-rise towns retain their traditional charms, and Bedouin values remain at the heart of an Omani welcome. With an abundance of natural beauty, from spectacular mountains, wind-blown deserts and a pristine coastline, Oman is the obvious choice for those seeking out the modern face of Arabia while wanting still to sense its ancient soul.</p>
+            </article>
 
-            <!-- fourth row -->
-            <div class="row">
-                <div class="col-12 col-sm-8">
-                  Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-                <div class="col-12 col-sm-4">
-                  Integer quis consectetur dolor. Cras egestas accumsan libero, non ullamcorper arcu convallis eget. Aenean luctus est a sem porttitor, eu tempus libero vehicula. Suspendisse facilisis aliquet mauris. Nunc id imperdiet tortor. Phasellus sed turpis nulla. Duis mattis, justo sit amet finibus gravida, arcu eros venenatis nunc, in iaculis odio nisl malesuada ante.
-                </div>
-            </div> <!-- row end -->                              
-
-        </div> <!-- container end -->
-
-        <!-- Bootstrap CSS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        </section>
     </main>
 
-  </body>
-
-  <footer>
-      Copyright Jason 202X 
-  </footer>
+    <!-- Footer of the website -->
+    <footer>
+        <div>
+            <p>Copyright &copy; 2019</p>
+        </div>
+    </footer>
+  </div>  
+</body>
 
 </html>

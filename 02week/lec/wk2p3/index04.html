@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <title>Milton Hotels</title>
+    <meta name="description" content="Milton Hotels">
+
+    <!-- Uncomment below line to use external style sheet 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    -->
+
+    <style>
+
+        /* This is how you leave a comment in the stylesheet section of the document. */
+
+        /*Affects the whole document */
+        article {
+            margin: 25;
+            height: 100%;
+            width: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* Sets the font styles for the page. These are web safe fonts. */
+        }
+
+        /*To wrap the content of the whole page. */
+        #wrapper {
+            margin: auto;
+            font-size: 25;
+            width: 100%;
+            max-width: 100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <header>
+            <div id="navigationbar">
+                <div id="companyname">
+                    <a href="#">Milton Hotels</a>
+                </div>
+                <nav id="navigationmenu">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">My Milton</a>
+                            <ul>
+                                <li>
+                                    <a href="#">My Booking</a>
+                                </li>
+                                <li>
+                                    <a href="#">My Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="#">Check Booking</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#topdestinations">Top Destinations</a>
+                        </li>
+                        <li>
+                            <a href="#">Offers</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <h2>You need a vacation!</h2>
+            </section>
+
+            <section>
+                <h1 class="mainwelcome">Welcome to Milton Hotels</h1>
+                <p class="mainhighlight">Great Prices and Locations</p>
+            </section>
+
+            <section>
+
+                <div>
+                    <h2 id="wrapper">Why us?</h2>
+                </div>
+
+                <article>
+                    <h2>Beautiful locations</h2>
+                    <p>We have hotels in some of the best locations all around Australia:</p>
+                    <ul>
+                        <li>Close to city center</li>
+                        <li>Free shuttle service to Airport</li>
+                        <li>Helpful staff</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h2>Affordable selections</h2>
+                    <p>We have <span> great prices and offers </span> all year round</p>
+                    <p>Click <a href="discounts.html">here</a> for more information.</p>
+                </article>
+
+                <article id="topdestinations">
+                    <h2>Don't know where to go? This list might help!</h2>
+                    <table id="topdestinationstable">
+                        <!--border attribute deprecated and shouldn't be used. CSS styles is the recommended method for styling.-->
+                        <thead>
+                            <tr>
+                                <th colspan="2">Top 10 Most Popular Tourist Destinations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bangkok</td>
+                                <td>20.05 million</td>
+                            </tr>
+                            <tr>
+                                <td>London</td>
+                                <td>19.83 million</td>
+                            </tr>
+                            <tr>
+                                <td>Paris</td>
+                                <td>17.44 million</td>
+                            </tr>
+                            <tr>
+                                <td>Dubai</td>
+                                <td>15.79 million</td>
+                            </tr>
+                            <tr>
+                                <td>Singapore</td>
+                                <td>13.91 million</td>
+                            </tr>
+                            <tr>
+                                <td>New York</td>
+                                <td>13.13 million</td>
+                            </tr>
+                            <tr>
+                                <td>Kuala Lumpur</td>
+                                <td>12.58 million</td>
+                            </tr>
+                            <tr>
+                                <td>Tokyo</td>
+                                <td>11.93 million</td>
+                            </tr>
+                            <tr>
+                                <td>Istanbul</td>
+                                <td>10.7 million</td>
+                            </tr>
+                            <tr>
+                                <td>Seoul</td>
+                                <td>9.54 million</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <p style="font-size:12px; text-align: center;">Source: <a
+                                            href="http://www.traveller.com.au/worlds-most-popular-cities-for-tourists-2018-named-h164d2"
+                                            target="_blank">Traveller.com</a></p>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+            </section>
+
+            <section class="infocus">
+
+                <div class="infocusheader">
+                    <h2>Check out what these cities have to offer!</h2>
+                </div>
+
+                <article class="infocuscity">
+                    <a href="https://www.visitbrisbane.com.au/" target="_blank"><img src="brisbane.jpg"
+                            alt="Brisbane"></a>
+                    <h3>Brisbane</h3>
+                    <p>As the capital of the Sunshine State, we are blessed with idyllic subtropical weather all year
+                        round.
+                        With award-winning food and wine, a jam-packed events calendar, adventurous activities, scenic
+                        weekend
+                        getaways and plenty to explore all over the city, there's always something to do.</p>
+                    <a href="#">More details</a>
+                </article>
+
+                <article class="infocuscity">
+                    <a href="https://www.sydney.com/" target="_blank"><img src="sydney.jpg" alt="Sydney"></a>
+                    <h3>Sydney</h3>
+                    <p>From splendid Sydney Harbour, idyllic beaches and great national parks, to the marvellous
+                        creativity
+                        of
+                        the Sydney Opera House, dazzling entertainment and fascinating heritage, discover all the things
+                        to
+                        do
+                        and see throughout the year.</p>
+                    <a href="#">More details</a>
+                </article>
+
+                <article class="infocuscity">
+                    <a href="https://www.visitmelbourne.com/" target="_blank"><img src="melbourne.jpg"
+                            alt="Melbourne"></a>
+                    <h3>Melbourne</h3>
+                    <p>A packed agenda of food, wine, sports and arts is your introduction to the best of Melbourne –
+                        from
+                        its
+                        creative, exciting city centre, to its buzzing neighbourhood hubs. It's the gateway to
+                        Victoria's
+                        world-class wineries, natural springs, peninsulas, spectacular coastline and alpine villages.
+                    </p>
+                    <a href="#">More details</a>
+                </article>
+            </section>
+
+            <section>
+
+                <div>
+                    <h2>Contact Us</h2>
+                </div>
+
+                <form method="post" id="indexcontactform">
+                    <!-- Actual form would have action="" -->
+                    <div class="contactform">
+                        <label for="name">Enter your name: </label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="contactform">
+                        <label for="email">Enter your email: </label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="contactform">
+                        <input type="submit" value="Send Message!">
+                    </div>
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>Copyright &copy; Milton Hotels</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

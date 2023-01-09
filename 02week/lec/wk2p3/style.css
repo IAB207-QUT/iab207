@@ -1,0 +1,210 @@
+ /* This is how you leave a comment in the stylesheet section of the document. */
+
+        /*Affects the whole document */
+        body {
+            margin: 0;
+            padding:10px;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+            /* Sets the font styles for the page. These are web safe fonts. */
+        }
+
+        /*To wrap the content of the whole page. */
+        #wrapper {
+            margin: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Affects the element with the id navigationbar. */
+        #navigationbar {
+            clear: both;
+            height: 50px;
+            background-color: #000033;
+        }
+
+        /* This is to style the page heading. */
+        #companyname {
+            margin: 0;
+            float: left;
+            padding: 5px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        /* This is to remove the underline from the page heading because it's a link. */
+        #companyname a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* This is to style the element that holds all the menu items. */
+        #navigationmenu {
+            float: right;
+        }
+
+        /* NAVIGATION CSS BEGIN */
+
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        nav ul li {
+            color: #fff;
+            display: block;
+            float: left;
+            padding: 1rem;
+            /* rem - Relative to font-size of the root element */
+            position: relative;
+            text-decoration: none;
+            transition-duration: 0.5s;
+        }
+
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li:hover,
+        nav ul li:focus-within {
+            background-color: royalblue;
+            cursor: pointer;
+        }
+
+        nav ul li:focus-within a {
+            outline: none;
+        }
+
+        nav ul li ul {
+            background-color: cornflowerblue;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            transition: all 0.5s ease;
+            margin-top: 1rem;
+            left: 0;
+            white-space: nowrap;
+        }
+
+        nav ul li:hover>ul,
+        nav ul li:focus-within>ul,
+        nav ul li ul:hover,
+        nav ul li ul:focus {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+        }
+
+        nav ul li ul li {
+            background-color: cornflowerblue;
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* NAVIGATION CSS END */
+
+        /* HERO IMAGE / BANNER IMAGE BEGIN */
+
+        /* Styles for the hero image */
+        .hero {
+            background: url(header.jpg) center;
+            /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("header.jpg");*/
+            background-size: cover;
+            padding: 8rem 2rem;
+            /* grid styles */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            align-items: center;
+        }
+
+        .hero>* {
+            color: white;
+        }
+
+        .hero>h2 {
+            font-size: 3rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* HERO IMAGE / BANNER IMAGE END */
+
+        .mainwelcome {
+            text-align: center;
+            font-size: 4rem;
+            margin: 10px;
+        }
+
+        .mainhighlight {
+            text-align: center;
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        /* TOP DESTINATIONS TABLE BEGIN */
+
+        #topdestinationstable {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #topdestinationstable td,
+        #topdestinationstable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #topdestinationstable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #topdestinationstable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: royalblue;
+            color: white;
+        }
+
+        /* TOP DESTINATIONS TABLE END */
+
+        .infocus {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .infocusheader {
+            position: absolute;
+            margin-top: 0;
+            padding-bottom: 3rem;
+        }
+
+        .infocuscity {
+            flex: 1 0 500px;
+            box-sizing: border-box;
+            margin: 3rem .25rem .25rem .25rem;
+        }
+
+        .infocuscity img {
+            display: block;
+            border: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Styles the footer for the website. Uses CSS Flexbox. */
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000033;
+            color: white;
+        }

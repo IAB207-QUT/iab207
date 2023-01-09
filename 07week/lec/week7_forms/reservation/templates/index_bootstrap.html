@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<div class="container-fluid">
+
+    <main>
+
+        <section>
+
+            <div class="container">
+
+                <div class="text-white text-center">
+                    <div>
+                        <p class="h1 text-dark mb-4">Why us?</p>
+                    </div>
+                </div>
+
+                <!-- CSS Grid -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <article>
+                            <h2>Beautiful locations</h2>
+                            <p>We have hotels in some of the best locations all around Australia:</p>
+                            <ul>
+                                <li>Close to city center</li>
+                                <li>Free shuttle service to Airport</li>
+                                <li>Helpful staff</li>
+                            </ul>
+                        </article>
+
+                    </div>
+                    <div class="col-md-6">
+                        <article>
+                            <h2>Affordable selections</h2>
+                            <p>We have <span> great prices and offers </span> all year round!</p>
+                            <p>Click <a href="discounts.html">here</a> for more information.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Horizontal Rule -->
+                <hr>
+
+            </div>
+        </section>
+
+        <section>
+
+            <div class="text-dark text-center">
+                <div>
+                    <p class="h3 text-dark mb-4">Check out what these cities have to offer!</p>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for hotel in hotels %}
+                <div class="card col-md-4">
+                    <img class="card-img-top" src={{'../static/img/' + hotel.image }} alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">{{hotel.name}}</h4>
+                        <p class="card-text">{{hotel.description}}</p>
+                    </div>
+                    <div class="card-footer"><a href="#" class="btn btn-primary">Details</a></div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </section>
+
+        <section>
+
+            <hr>
+
+          
+
+            <div class="container">
+                <h2>Contact Form</h2>
+                <!--update the action and the method with relevant information-->
+                {{wtf.quick_form(html_form,action=url_for('main.create_contact'))}}
+              </div>
+
+        </section>
+
+        <hr>
+
+        
+
+    </main>
+
+</div>
+
+
+{% endblock %}

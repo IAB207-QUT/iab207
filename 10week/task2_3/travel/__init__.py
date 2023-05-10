@@ -1,7 +1,9 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap4
+from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
+import datetime
 
 db=SQLAlchemy()
 app=Flask(__name__)
@@ -9,16 +11,20 @@ app=Flask(__name__)
 def create_app():
     
     #we use this utility module to display forms quickly
-    bootstrap = Bootstrap4(app)
+    bootstrap = Bootstrap5(app)
 
-    #A secret key for the session object
+    #this is a much safer way to store passwords
+    bcrypt = Bcrypt(app)
+
+    #a secret key for the session object
+    #(it would be better to use an environment variable here)
     app.secret_key='somerandomvalue'
 
     #Configue and initialise DB
     app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///travel123.sqlite'
     db.init_app(app)
     
-    #initialize the login manager
+    #initialise the login manager
     login_manager = LoginManager()
     login_manager.login_view='auth.login'
     login_manager.init_app(app)
@@ -33,14 +39,20 @@ def create_app():
     from . import views
     app.register_blueprint(views.mainbp)
     from . import destinations
-    app.register_blueprint(destinations.bp)
+    app.register_blueprint(destinations.destbp)
     from . import auth
-    app.register_blueprint(auth.bp)
+    app.register_blueprint(auth.authbp)
 
     return app
 
 @app.errorhandler(404) 
 # inbuilt function which takes error as parameter 
 def not_found(e): 
-  return render_template("404.html")
+  return render_template("404.html", error=e)
 
+#this creates a dictionary of variables that are available
+#to all html templates
+@app.context_processor
+def get_context():
+   year = datetime.datetime.today().year
+   return dict(year=year)

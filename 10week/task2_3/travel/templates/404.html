@@ -1,11 +1,15 @@
 {% extends "base.html" %}
-{% import "bootstrap/form.html" as wtf %}
 
 {% block content %}
 
 <div class="container">
-    <h1>Error</h1>
-    <p>We cannot find what you are looking for.</p>
+    <div class="row">
+        <div class="col-6">
+            <h1>Error</h1>
+            <p>Something went wrong! More info:</p>
+            <p>{{error}}</p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

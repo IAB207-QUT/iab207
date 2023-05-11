@@ -15,6 +15,6 @@ def search():
         print(request.args['search'])
         query = "%" + request.args['search'] + '%'
         destinations = db.session.scalars(db.select(Destination)).where(Destination.description.like(query))
-        return render_template('index.html', destinations=destinations)
+        return render_template('index.html', destinations = destinations)
     else:
         return redirect(url_for('main.index'))

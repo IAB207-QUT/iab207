@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% import "bootstrap4/form.html" as wtf %}
+
+{% import "bootstrap5/form.html" as wtf %}
 
 {% block content %}
 
@@ -29,7 +30,7 @@
 </div>
 
 <!-- When you have login form, then do show the user a link to register -->
-{% if heading|lower =='login' %}
+{% if heading|lower == 'login' %}
 <div class="col-md-4 mb-5 ml-5">
     <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
 </div>

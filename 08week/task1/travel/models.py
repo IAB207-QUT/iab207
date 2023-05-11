@@ -7,7 +7,7 @@ class Destination:
         self.currency = currency
         self.comments = list()
 
-    def set_comments(self,comment):
+    def set_comments(self, comment):
         self.comments.append(comment)
 
     def __repr__(self):
@@ -17,7 +17,7 @@ class Destination:
 
 
 class Comment:
-    def __init__(self,user, text, created_at):
+    def __init__(self, user, text, created_at):
         self.user = user
         self.text = text
         self.create_at = created_at

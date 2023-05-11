@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
-{% import "bootstrap4/form.html" as wtf %}
+{% import "bootstrap5/form.html" as wtf %}
+
 {% block content %}
+
   <div class="container">
     <div class="row mt-5">
       <div class="col-md-12">
-
         <h1>Add Travel Destination</h1>
         <p>Enter a country that you will help clients travel to.</p>
-
         {{wtf.render_form(form)}}
-        
       </div>
     </div>
   </div>

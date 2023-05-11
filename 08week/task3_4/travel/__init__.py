@@ -1,23 +1,23 @@
 from flask import Flask
-from flask_bootstrap import Bootstrap4
+from flask_bootstrap import Bootstrap5
 
 
 def create_app():
-    app=Flask(__name__)
+    app = Flask(__name__)
 
     #we use this utility module to display forms quickly
-    bootstrap = Bootstrap4(app)
+    bootstrap = Bootstrap5(app)
 
     #A secret key for the session object
-    app.secret_key='somerandomvalue'
+    app.secret_key = 'somerandomvalue'
     
     #add Blueprints
     from . import views
     app.register_blueprint(views.mainbp)
     from . import destinations
-    app.register_blueprint(destinations.bp)
+    app.register_blueprint(destinations.destbp)
     from . import auth
-    app.register_blueprint(auth.bp)
+    app.register_blueprint(auth.authbp)
 
     return app
 

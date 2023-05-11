@@ -7,29 +7,29 @@ ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
 
 #Create new destination
 class DestinationForm(FlaskForm):
-  name = StringField('Country', validators=[InputRequired()])
+  name = StringField('Country', validators = [InputRequired()])
   description = TextAreaField('Description', 
-            validators=[InputRequired()])
-  image = FileField('Destination Image', validators=[
-    FileRequired(message='Image cannot be empty'),
-    FileAllowed(ALLOWED_FILE, message='Only supports PNG, JPG, png, jpg')])
-  currency = StringField('Currency', validators=[InputRequired()])
+            validators = [InputRequired()])
+  image = FileField('Destination Image', validators = [
+    FileRequired(message = 'Image cannot be empty'),
+    FileAllowed(ALLOWED_FILE, message = 'Only supports PNG, JPG, png, jpg')])
+  currency = StringField('Currency', validators = [InputRequired()])
   submit = SubmitField("Create")
     
 #User login
 class LoginForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired('Enter user name')])
-    password=PasswordField("Password", validators=[InputRequired('Enter user password')])
+    user_name = StringField("User Name", validators = [InputRequired('Enter user name')])
+    password = PasswordField("Password", validators = [InputRequired('Enter user password')])
     submit = SubmitField("Login")
 
 #User register
 class RegisterForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired()])
-    email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
+    user_name = StringField("User Name", validators = [InputRequired()])
+    email_id = StringField("Email Address", validators = [Email("Please enter a valid email")])
     
     #linking two fields - password should be equal to data entered in confirm
-    password=PasswordField("Password", validators=[InputRequired(),
-                  EqualTo('confirm', message="Passwords should match")])
+    password = PasswordField("Password", validators = [InputRequired(),
+                  EqualTo('confirm', message = "Passwords should match")])
     confirm = PasswordField("Confirm Password")
     #submit button
     submit = SubmitField("Register")

@@ -16,7 +16,7 @@ from flask import Flask
 # a web server will run this web application
 def create_app():
     print(__name__)  #let us be curious - what is this __name__ 
-    app=Flask(__name__)  # this is the name of the module/package that is calling this app
+    app = Flask(__name__)  # this is the name of the module/package that is calling this app
     return app
 
 '''
@@ -33,6 +33,6 @@ the code below should be placed into main.py
 
 from travel import create_app
 
-if __name__=='__main__':
-    n_app=create_app()
-    n_app.run(debug=True)
+if __name__ == '__main__':
+    n_app = create_app()
+    n_app.run(debug = True)

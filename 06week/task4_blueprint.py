@@ -19,7 +19,7 @@ mainbp = Blueprint('main', __name__)
 
 @mainbp.route('/')
 def index():
-    str='<h1>hello world</h1>'
+    str = '<h1>hello world</h1>'
     return str
 
 '''
@@ -32,8 +32,8 @@ from flask import Flask
 
 def create_app():
     print(__name__)  #let us be curious - what is this __name__
-    app=Flask(__name__)  # this is the name of the module/package that is calling this app
-    app.debug=True
+    app = Flask(__name__)  # this is the name of the module/package that is calling this app
+    app.debug = True
     #add the Blueprint
     from . import views
     app.register_blueprint(views.mainbp)

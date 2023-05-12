@@ -13,7 +13,7 @@ print('################')
 
 print('Creating a frequent traveller named Jack')
 su = FrequentTraveller()
-su.register('jack','iituri', 'jack@x.com',123231)
+su.register('jack','iituri', 'jack@x.com', 123231)
 print(su)
 
 print('###############')

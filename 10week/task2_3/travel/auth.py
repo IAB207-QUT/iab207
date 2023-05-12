@@ -9,7 +9,7 @@ from . import db
 #create a blueprint
 authbp = Blueprint('auth', __name__ )
 
-@authbp.route('/register', methods=['GET', 'POST'])
+@authbp.route('/register', methods = ['GET', 'POST'])
 def register():
     register = RegisterForm()
     #the validation of form is fine, HTTP request is POST
@@ -19,7 +19,7 @@ def register():
             pwd = register.password.data
             email = register.email_id.data
             #check if a user exists
-            user = db.session.scalar(db.select(User).where(User.name==uname))
+            user = db.session.scalar(db.select(User).where(User.name == uname))
             if user:#this returns true when user is not None
                 flash('Username already exists, please try another')
                 return redirect(url_for('auth.register'))
@@ -33,17 +33,17 @@ def register():
             return redirect(url_for('main.index'))
     #the else is called when the HTTP request calling this page is a GET
     else:
-        return render_template('user.html', form=register, heading = 'Register')
+        return render_template('user.html', form = register, heading = 'Register')
 
 @authbp.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm()
-    error=None
+    error = None
     if(login_form.validate_on_submit() == True):
         #get the username and password from the database
         user_name = login_form.user_name.data
         password = login_form.password.data
-        user = db.session.scalar(db.select(User).where(User.name==user_name))
+        user = db.session.scalar(db.select(User).where(User.name == user_name))
         #if there is no user with that name
         if user is None:
             error = 'Incorrect username'#could be a security risk to give this much info away
@@ -56,7 +56,7 @@ def login():
             return redirect(url_for('main.index'))
         else:
             flash(error)
-    return render_template('user.html', form=login_form, heading = 'Login')
+    return render_template('user.html', form = login_form, heading = 'Login')
 
 @authbp.route('/logout')
 @login_required

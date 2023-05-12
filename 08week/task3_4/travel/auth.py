@@ -4,7 +4,7 @@ from .forms import LoginForm, RegisterForm
 #create a blueprint
 authbp = Blueprint('auth', __name__ )
 
-@authbp.route('/login', methods=['GET', 'POST'])
+@authbp.route('/login', methods = ['GET', 'POST'])
 def login():
     loginForm = LoginForm()
     if loginForm.validate_on_submit():

@@ -9,7 +9,7 @@ destbp = Blueprint('destination', __name__, url_prefix = '/destinations')
 
 @destbp.route('/<id>')
 def show(id):
-    destination = Destination.query.filter_by(id=id).first()
+    destination = Destination.query.filter_by(id = id).first()
     # create the comment form
     cform = CommentForm()    
     return render_template('destinations/show.html', destination = destination, form = cform)

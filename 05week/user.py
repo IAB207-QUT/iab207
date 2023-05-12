@@ -12,9 +12,9 @@ class User:
         self.emailID = emailID
 
     def __repr__(self):
-        s = "Name: {0}, Email: {1}, type: {2}\n"
-        s = s.format(self.uname, self.emailID, self.user_type)
-        return s
+        str = "Name: {0}, Email: {1}, type: {2}\n"
+        str = str.format(self.uname, self.emailID, self.user_type)
+        return str
 
 
 

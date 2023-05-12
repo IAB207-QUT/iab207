@@ -9,7 +9,7 @@ def create_app():
     bootstrap = Bootstrap5(app)
 
     #A secret key for the session object
-    app.secret_key='somerandomvalue'
+    app.secret_key = 'somerandomvalue'
     
     #add Blueprints
     from . import views

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% import "bootstrap4/form.html" as wtf %}
+{% from 'bootstrap5/form.html' import render_form %}
 
 {% block content %}
 
@@ -8,13 +8,13 @@
     <div class="row mt-5 mb-3">  
       <div class="col-md-12">  
         <div class="float-left">  
-          <h1 class="mb-0">Italy</h1>  
+          <h1 class="mb-0">{{destination.name}}</h1>  
           <p>Popular Destination</p>  
         </div>  
  
         <div class="float-right text-right">  
           <p class="mb-0">1 AUD equals</p>  
-          <h2 id="exchange-rate">0.62 EUR</h1>  
+          <h2 id="exchange-rate">0.62 {{destination.currency}}</h1>  
         </div>  
       </div>  
     </div>  
@@ -36,12 +36,8 @@
           </div>  
         </div>  
       </div>  
-    </div>     
- 
-   
- 
-    <hr>  
- 
+    </div>
+    <hr>
     <!-- Comments -->  
     <div class="row">  
       <div class="col-md-12">  
@@ -50,10 +46,10 @@
     </div>  
  
     <div class="row border-bottom"> 
-      {{wtf.render_form(form,"/destinations/{0}/comment".format(destination.id))}} 
+      {{render_form(form,"/destinations/{0}/comment".format(destination.id))}} 
       {% for comment in destination.comments %}
       <div class="col-md-12">  
-        <b>{{comment.user}} <span class="ml-2 text-muted">January 2017</span></b>  Cr
+        <b>{{comment.user}} <span class="ml-2 text-muted">January 2024</span></b>
         <p>{{comment.text}}</p>  
       </div> 
       {% endfor %} 

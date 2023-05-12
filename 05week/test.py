@@ -22,13 +22,13 @@ print('Creating a city Brisbane')
 brisbane = City('Brisbane', 'City in Queensland with a good weather')
 print(brisbane)
 
-st_date = datetime(2019,11,23)
-end_date = datetime(2019,11,30)
+st_date = datetime(2022,11,23)
+end_date = datetime(2022,11,30)
 
 print('Creating a booking for user')
-booking = Booking(st_date,end_date,brisbane,user1)
+booking = Booking(st_date, end_date, brisbane, user1)
 print('#################')
 print(booking)
 
 print('#################')
-print("Access City description of booking: " , booking.city.description)
+print("Access City description of booking: ", booking.city.description)

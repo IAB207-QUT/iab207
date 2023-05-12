@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% import "bootstrap5/form.html" as wtf %}
+{% from 'bootstrap5/form.html' import render_form %}
 
 {% block content %}
 
@@ -46,7 +46,7 @@
     </div>  
  
     <div class="row border-bottom"> 
-      {{wtf.render_form(form,"/destinations/{0}/comment".format(destination.id))}}
+      {{render_form(form,"/destinations/{0}/comment".format(destination.id))}}
       
       {% for comment in destination.comments %}
       <div class="col-md-12">  

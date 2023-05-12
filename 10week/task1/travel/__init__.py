@@ -19,7 +19,7 @@ def create_app():
     app.secret_key = 'somerandomvalue'
 
     #Configue and initialise DB
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///travel123.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///traveldb.sqlite'
     db.init_app(app)
 
     #add Blueprints

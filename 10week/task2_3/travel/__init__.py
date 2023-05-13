@@ -23,6 +23,10 @@ def create_app():
     #Configue and initialise DB
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///traveldb.sqlite'
     db.init_app(app)
+
+    #config upload folder
+    UPLOAD_FOLDER = '/static/image'
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
     
     #initialise the login manager
     login_manager = LoginManager()

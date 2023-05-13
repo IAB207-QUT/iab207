@@ -7,7 +7,7 @@ destbp = Blueprint('destination', __name__, url_prefix = '/destinations')
 
 @destbp.route('/<id>')
 def show(id):
-    destination = Destination.query.filter_by(id = id).first()
+    destination = db.session.scalar(db.select(Destination).where(Destination.id == id))
     # create the comment form
     cform = CommentForm()    
     return render_template('destinations/show.html', destination = destination, form = cform)
@@ -34,11 +34,10 @@ def create():
 def comment(destination):  
     form = CommentForm()  
     #get the destination object associated to the page and the comment
-    destination_obj = Destination.query.filter_by(id = destination).first()  
+    destination = db.session.scalar(db.select(Destination).where(Destination.id == destination))
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text = form.text.data,  
-                        destination = destination_obj) 
+      comment = Comment(text = form.text.data, destination = destination) 
       #here the back-referencing works - comment.destination is set
       # and the link is created
       db.session.add(comment) 

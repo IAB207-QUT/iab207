@@ -16,7 +16,7 @@
     <div class="row mt-3 mb-3">
       <div class="col-md-12">
       {% for message in messages %} <!--loop through the messages-->
-        <div class="alert alert-info">{{message}}</div> <!--display as alert-->
+        <div class="alert alert-info">{{ messagem}}</div> <!--display as alert-->
       {% endfor %}
     </div>
   </div>
@@ -26,7 +26,7 @@
 
 <!-- Form rendering is simple and easy if using bootstrap -->
 <div class="col-md-6 ml-5">
-{{render_form(form)}}
+{{ render_form(form) }}
 </div>
 
 <!-- When you have login form, then do show the user a link to register -->

@@ -2,25 +2,25 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from .models import Destination, Comment
 from .forms import DestinationForm, CommentForm
 
-destbp = Blueprint('destination', __name__, url_prefix = '/destinations')
+destbp = Blueprint('destination', __name__, url_prefix='/destinations')
 
 @destbp.route('/<id>')
 def show(id):
     destination = get_destination()
     # create the comment form
     cform = CommentForm()    
-    return render_template('destinations/show.html', destination = destination, form = cform)
+    return render_template('destinations/show.html', destination=destination, form=cform)
 
-@destbp.route('/create', methods = ['GET', 'POST'])
+@destbp.route('/create', methods=['GET', 'POST'])
 def create():
   print('Method type: ', request.method)
   form = DestinationForm()
   if form.validate_on_submit():
     print('Successfully created new travel destination', 'success')
     return redirect(url_for('destination.create'))
-  return render_template('destinations/create.html', form = form)
+  return render_template('destinations/create.html', form=form)
 
-@destbp.route('/<id>/comment', methods = ['GET', 'POST'])
+@destbp.route('/<id>/comment', methods=['GET', 'POST'])
 def comment(id):
   #here the form is created  form = CommentForm()
   form = CommentForm()

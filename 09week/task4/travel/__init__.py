@@ -11,7 +11,7 @@ def create_app():
     bootstrap = Bootstrap5(app)
 
     #A secret key for the session object
-    app.secret_key='somerandomvalue'
+    app.secret_key = 'somerandomvalue'
 
     #Configue and initialise DB
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///traveldb.sqlite'

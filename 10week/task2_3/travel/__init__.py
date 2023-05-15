@@ -52,11 +52,11 @@ def create_app():
 @app.errorhandler(404) 
 # inbuilt function which takes error as parameter 
 def not_found(e): 
-  return render_template("404.html", error = e)
+  return render_template("404.html", error=e)
 
 #this creates a dictionary of variables that are available
 #to all html templates
 @app.context_processor
 def get_context():
    year = datetime.datetime.today().year
-   return dict(year = year)
+   return dict(year=year)

@@ -12,7 +12,7 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(255), nullable = False)
 
     # relation to call user.comments and comment.created_by
-    comments = db.relationship('Comment', backref = 'user')
+    comments = db.relationship('Comment', backref='user')
 
 class Destination(db.Model):
     __tablename__ = 'destinations'
@@ -23,16 +23,16 @@ class Destination(db.Model):
     currency = db.Column(db.String(3))
     # ... Create the Comments db.relationship
 	# relation to call destination.comments and comment.destination
-    comments = db.relationship('Comment', backref = 'destination')
+    comments = db.relationship('Comment', backref='destination')
 	
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
 
 class Comment(db.Model):
     __tablename__ = 'comments'
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(400))
-    created_at = db.Column(db.DateTime, default = datetime.now())
+    created_at = db.Column(db.DateTime, default=datetime.now())
     #add the foreign keys
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))

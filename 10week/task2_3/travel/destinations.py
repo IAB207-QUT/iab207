@@ -11,12 +11,12 @@ destbp = Blueprint('destination', __name__, url_prefix='/destinations')
 
 @destbp.route('/<id>')
 def show(id):
-    destination = db.session.scalar(db.select(Destination).where(Destination.id == id))
+    destination = db.session.scalar(db.select(Destination).where(Destination.id==id))
     # create the comment form
     form = CommentForm()    
-    return render_template('destinations/show.html', destination = destination, form = form)
+    return render_template('destinations/show.html', destination=destination, form=form)
 
-@destbp.route('/create', methods = ['GET', 'POST'])
+@destbp.route('/create', methods=['GET', 'POST'])
 @login_required
 def create():
   print('Method type: ', request.method)
@@ -24,8 +24,8 @@ def create():
   if form.validate_on_submit():
     #call the function that checks and returns image
     db_file_path = check_upload_file(form)
-    destination = Destination(name = form.name.data,description = form.description.data, 
-    image = db_file_path,currency = form.currency.data)
+    destination = Destination(name=form.name.data,description=form.description.data, 
+    image=db_file_path,currency=form.currency.data)
     # add the object to the db session
     db.session.add(destination)
     # commit to the database
@@ -33,7 +33,7 @@ def create():
     flash('Successfully created new travel destination', 'success')
     #Always end with redirect when form is valid
     return redirect(url_for('destination.create'))
-  return render_template('destinations/create.html', form = form)
+  return render_template('destinations/create.html', form=form)
 
 def check_upload_file(form):
   #get file data from form  
@@ -49,16 +49,16 @@ def check_upload_file(form):
   fp.save(upload_path)
   return db_upload_path
 
-@destbp.route('/<destination>/comment', methods = ['GET', 'POST'])  
+@destbp.route('/<destination>/comment', methods=['GET', 'POST'])  
 @login_required
 def comment(destination):  
     form = CommentForm()  
     #get the destination object associated to the page and the comment
-    destination = db.session.scalar(db.select(Destination).where(Destination.id == destination))
+    destination = db.session.scalar(db.select(Destination).where(Destination.id==destination))
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text = form.text.data, destination = destination,
-                        user = current_user) 
+      comment = Comment(text=form.text.data, destination=destination,
+                        user=current_user) 
       #here the back-referencing works - comment.destination is set
       # and the link is created
       db.session.add(comment) 
@@ -68,5 +68,5 @@ def comment(destination):
       flash('Your comment has been added', 'success')  
       # print('Your comment has been added', 'success') 
     # using redirect sends a GET request to destination.show
-    return redirect(url_for('destination.show', id = destination.id))
+    return redirect(url_for('destination.show', id=destination.id))
     

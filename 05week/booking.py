@@ -11,7 +11,5 @@ class Booking:
         self.num_guests = 1
     
     def __repr__(self):
-        str = " User: {0} City: {1}\n Start date: {2}\n End date: {3}\n Number of Guests: {4}"
-        str = str.format( self.user, self.city.name, self.startdate,
-            self.enddate, self.num_guests)
+        str = f"User: {self.user} City: {self.city.name}\n Start date: {self.startdate}\n End date: {self.enddate}\n Number of Guests: {self.num_guests}"
         return str

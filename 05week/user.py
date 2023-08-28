@@ -2,43 +2,31 @@ class User:
     # this is the function used to create the user
     def __init__(self):
         self.user_type = 'guest'
-        self.uname = None
-        self.pwd = None
-        self.emailID = None
+        self.username = None
+        self.password = None
+        self.email = None
 
-    def register(self, name, pwd, emailID):
-        self.uname = name
-        self.pwd = pwd
-        self.emailID = emailID
+    def register(self, username, password, email):
+        self.username = username
+        self.password = password
+        self.email = email
 
     def __repr__(self):
-        str = "Name: {0}, Email: {1}, type: {2}\n"
-        str = str.format(self.uname, self.emailID, self.user_type)
+        str = f"Name: {self.username}, Email: {self.email}, User type: {self.user_type}"
         return str
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-
 
 class FrequentTraveller(User):
 
     def __init__(self):
-        self.user_type='frequent traveller'
-        self.travellerID='NONE'
+        self.user_type = 'Frequent Traveller'
+        self.travellerID = None
 
-    def register(self, username, pwd, emailID, travellerID):
-        super().register(username,pwd,emailID)
-        self.travellerID=travellerID
+    def register(self, username, passwd, emailID, travellerID):
+        super().register(username ,passwd, emailID)
+        self.travellerID = travellerID
     
     def __repr__(self):
-        s= super().__repr__()
-        s = s + "Traveller ID: {0}".format(self.travellerID)
-        return s
+        str = super().__repr__()
+        str = str + f" Traveller ID: {self.travellerID}"
+        #str = str + "Traveller ID: {0}".format(self.travellerID)
+        return str

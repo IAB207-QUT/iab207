@@ -5,16 +5,16 @@ from travel.booking import Booking
 from travel.city import City
 
 print('Creating a user named Jill')
-user1 = User()
-user1.register('jill','iueo','jill@y.com')
-print(user1)
+user = User()
+user.register('jill','hash123','jill@google.com')
+print(user)
 
 print('################')
 
 print('Creating a frequent traveller named Jack')
-su = FrequentTraveller()
-su.register('jack','iituri', 'jack@x.com', 123231)
-print(su)
+freq_user = FrequentTraveller()
+freq_user.register('jack','pass123', 'jack@google.com', 123231)
+print(freq_user)
 
 print('###############')
 
@@ -22,13 +22,13 @@ print('Creating a city Brisbane')
 brisbane = City('Brisbane', 'City in Queensland with a good weather')
 print(brisbane)
 
-st_date = datetime(2022,11,23)
-end_date = datetime(2022,11,30)
+start_date = datetime(2023,11,23,10,0,0)#what is ISO 8601 format?
+end_date = datetime(2023,11,30,10,0,0)
 
 print('Creating a booking for user')
-booking = Booking(st_date, end_date, brisbane, user1)
+booking = Booking(start_date, end_date, brisbane, user)
 print('#################')
 print(booking)
 
 print('#################')
-print("Access City description of booking: ", booking.city.description)
+print("Access City description of Booking: ", booking.city.description)

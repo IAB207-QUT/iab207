@@ -37,6 +37,4 @@ class Comment(db.Model):
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
 
     def __repr__(self):
-        return "<Comment: {}>".format(self.text)
-
-
+        return f"Comment: {self.text}"

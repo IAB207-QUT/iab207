@@ -9,7 +9,6 @@ class User(db.Model):
 	#password is never stored in the DB, an encrypted password is stored
 	# the storage should be at least 255 chars long
     password_hash = db.Column(db.String(255), nullable=False)
-
     # relation to call user.comments and comment.created_by
     comments = db.relationship('Comment', backref='user')
 
@@ -25,7 +24,7 @@ class Destination(db.Model):
     comments = db.relationship('Comment', backref='destination')
 	
     def __repr__(self): #string print method
-        return "<Name: {}>".format(self.name)
+        return f"Name: {self.name}"
 
 class Comment(db.Model):
     __tablename__ = 'comments'
@@ -37,4 +36,4 @@ class Comment(db.Model):
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
 
     def __repr__(self):
-        return "<Comment: {}>".format(self.text)
+        return f"Comment: {self.text}"

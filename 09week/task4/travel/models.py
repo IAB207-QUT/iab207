@@ -25,7 +25,7 @@ class Destination(db.Model):
     comments = db.relationship('Comment', backref='destination')
 	
     def __repr__(self): #string print method
-        return "<Name: {}>".format(self.name)
+        return f"Name: {self.name}>"
 
 class Comment(db.Model):
     __tablename__ = 'comments'
@@ -37,4 +37,4 @@ class Comment(db.Model):
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
 
     def __repr__(self):
-        return "<Comment: {}>".format(self.text)
+        return f"Comment: {self.text}"

@@ -5,7 +5,7 @@ mainbp = Blueprint('main', __name__)
 @mainbp.route('/')
 def index():
     if 'email' in session:
-        str = '<h1>Hello ' + session['email'] + '</h1>'
+        str = f"<h1>Hello {session['email']}</h1>"
     else:
         str = '<h1>Hello World</h1>'
     return str

@@ -11,5 +11,5 @@ class Booking:
         self.num_guests = 1
     
     def __repr__(self):
-        str = f"User: {self.user} City: {self.city.name}\n Start date: {self.startdate}\n End date: {self.enddate}\n Number of Guests: {self.num_guests}"
+        str = f"User: {self.user}\nCity: {self.city.name}\nStart date: {self.startdate}\nEnd date: {self.enddate}\nNumber of Guests: {self.num_guests}"
         return str

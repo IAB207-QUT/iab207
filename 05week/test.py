@@ -6,7 +6,7 @@ from travel.city import City
 
 print('Creating a user named Jill')
 user = User()
-user.register('jill','hash123','jill@google.com')
+user.register('jill','pass123','jill@google.com')
 print(user)
 
 print('################')

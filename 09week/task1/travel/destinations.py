@@ -36,7 +36,7 @@ def get_destination():
    It is one of the world\'s major breadbaskets, being the largest producer of coffee for the last 150 years."""
    # an image location
   image_loc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFyC8pBJI2AAHLpAVih41_yWx2xxLleTtdshAdk1HOZQd9ZM8-Ag'
-  destination = Destination('Brazil', b_desc,image_loc, 'R$10')
+  destination = Destination('Brazil', b_desc, image_loc, 'R$10')
   # a comment
   comment = Comment("Sam", "Visited during the olympics, was great", '2023-08-12 11:00:00')
   destination.set_comments(comment)

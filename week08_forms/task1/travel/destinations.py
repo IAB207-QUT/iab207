@@ -17,7 +17,7 @@ def create():
   print('Method type: ', request.method)
   form = DestinationForm()
   if form.validate_on_submit():
-    print('Successfully created new travel destination', 'success')
+    print('Successfully created new travel destination')
     #return redirect(url_for('destination.create'))
   return render_template('destinations/create.html', form = form)
 

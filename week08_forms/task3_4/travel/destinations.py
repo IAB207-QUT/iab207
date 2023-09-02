@@ -16,7 +16,7 @@ def create():
   print('Method type: ', request.method)
   form = DestinationForm()
   if form.validate_on_submit():
-    print('Successfully created new travel destination', 'success')
+    print('Successfully created new travel destination')
     return redirect(url_for('destination.create'))
   return render_template('destinations/create.html', form = form)
 
@@ -25,7 +25,7 @@ def comment(id):
   #here the form is created  form = CommentForm()
   form = CommentForm()
   if form.validate_on_submit():	#this is true only in case of POST method
-    print("The following comment has been posted:", form.text.data)
+    print(f"The following comment has been posted: {form.text.data}")
   # notice the signature of url_for
   return redirect(url_for('destination.show', id = 1))
 

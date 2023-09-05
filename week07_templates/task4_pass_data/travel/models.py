@@ -1,9 +1,9 @@
 class Destination:
 
-    def __init__(self, name, description, image_url, currency):
+    def __init__(self, name, description, image, currency):
         self.name = name
         self.description = description
-        self.image = image_url
+        self.image = image
         self.currency = currency
         self.comments = list()
 
@@ -19,7 +19,7 @@ class Comment:
     def __init__(self,user, text, created_at):
         self.user = user
         self.text = text
-        self.create_at = created_at
+        self.created_at = created_at
 
     def __repr__(self):
         str = f"User {self.user}, \n Text {self.text}"

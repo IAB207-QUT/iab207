@@ -14,7 +14,6 @@ class Destination:
         str = f'Name {self.name} , Currency {self.currency}'
         return str
 
-
 class Comment:
     def __init__(self,user, text, created_at):
         self.user = user

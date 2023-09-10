@@ -11,7 +11,7 @@ class Destination:
         self.comments.append(comment)
 
     def __repr__(self):
-        str = f'Name {self.name} , Currency {self.currency}'
+        str = f'Name {self.name}, Currency {self.currency}'
         return str
 
 class Comment:
@@ -21,5 +21,5 @@ class Comment:
         self.create_at = created_at
 
     def __repr__(self):
-        str = f'User {self.user}, \n Text {self.text}'
+        str = f'User {self.user}, \nText {self.text}'
         return str

@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap5
 
-
 def create_app():
     app = Flask(__name__)
 
@@ -18,4 +17,3 @@ def create_app():
     app.register_blueprint(destinations.destbp)
 
     return app
-

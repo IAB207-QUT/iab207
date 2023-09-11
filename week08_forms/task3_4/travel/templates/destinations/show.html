@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% from 'bootstrap5/form.html' import render_form %}
+
 {% block content %}
 
 <div class="container">  
@@ -43,7 +45,8 @@
       </div>  
     </div>  
  
-    <div class="row border-bottom">  
+    <div class="row border-bottom"> 
+      {{render_form(form,"/destinations/{0}/comment".format(1))}}
       {% for comment in destination.comments %}
       <div class="col-md-12">  
         <b>{{comment.user}} <span class="ml-2 text-muted">January 2024</span></b>

@@ -3,7 +3,7 @@ from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordFiel
 from wtforms.validators import InputRequired, Email, EqualTo
 from flask_wtf.file import FileRequired, FileField, FileAllowed
 
-ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
+ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
 
 #Create new destination
 class DestinationForm(FlaskForm):

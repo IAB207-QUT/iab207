@@ -8,7 +8,7 @@ def create_app():
     app = Flask(__name__)
 
     #we use this utility module to display forms quickly
-    bootstrap = Bootstrap5(app)
+    Bootstrap5(app)
 
     #A secret key for the session object
     app.secret_key = 'somerandomvalue'
@@ -19,7 +19,7 @@ def create_app():
 
     #config upload folder
     UPLOAD_FOLDER = '/static/image'
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     
     #add Blueprints
     from . import views

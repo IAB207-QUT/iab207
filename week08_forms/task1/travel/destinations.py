@@ -5,12 +5,12 @@ from .forms import DestinationForm
 #Use of blueprint to group routes, 
 # name - first argument is the blue print name 
 # import name - second argument - helps identify the root url for it 
-destbp = Blueprint('destination', __name__, url_prefix = '/destinations')
+destbp = Blueprint('destination', __name__, url_prefix='/destinations')
 
 @destbp.route('/<id>')
 def show(id):
     destination = get_destination()
-    return render_template('destinations/show.html', destination = destination)
+    return render_template('destinations/show.html', destination=destination)
 
 @destbp.route('/create', methods = ['GET', 'POST'])
 def create():
@@ -19,7 +19,7 @@ def create():
   if form.validate_on_submit():
     print('Successfully created new travel destination')
     #return redirect(url_for('destination.create'))
-  return render_template('destinations/create.html', form = form)
+  return render_template('destinations/create.html', form=form)
 
 def get_destination():
   # creating the description of Brazil

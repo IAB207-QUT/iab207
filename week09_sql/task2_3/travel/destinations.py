@@ -36,7 +36,8 @@ def comment(id):
     #get the destination object associated to the page and the comment
     destination = db.session.scalar(db.select(Destination).where(Destination.id==id))
     if form.validate_on_submit():  
-      #read the comment from the form
+      # read the comment from the form, associate the Comment's destination field
+      # with the destination object from the above DB query
       comment = Comment(text=form.text.data, destination=destination) 
       #here the back-referencing works - comment.destination is set
       # and the link is created

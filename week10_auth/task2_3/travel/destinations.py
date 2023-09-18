@@ -49,23 +49,22 @@ def check_upload_file(form):
   fp.save(upload_path)
   return db_upload_path
 
-@destbp.route('/<destination>/comment', methods=['GET', 'POST'])  
+@destbp.route('/<id>/comment', methods=['GET', 'POST'])  
 @login_required
-def comment(destination):  
+def comment(id):  
     form = CommentForm()  
     #get the destination object associated to the page and the comment
-    destination_obj = db.session.scalar(db.select(Destination).where(Destination.id==destination))
+    destination = db.session.scalar(db.select(Destination).where(Destination.id==id))
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text=form.text.data, destination=destination_obj,
+      comment = Comment(text=form.text.data, destination=destination,
                         user=current_user) 
       #here the back-referencing works - comment.destination is set
       # and the link is created
       db.session.add(comment) 
       db.session.commit() 
-
       #flashing a message which needs to be handled by the html
       flash('Your comment has been added', 'success')  
       # print('Your comment has been added', 'success') 
     # using redirect sends a GET request to destination.show
-    return redirect(url_for('destination.show', id=destination.id))
+    return redirect(url_for('destination.show', id=id))

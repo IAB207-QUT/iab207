@@ -11,10 +11,10 @@ app = Flask(__name__)
 def create_app():
     
     #we use this utility module to display forms quickly
-    bootstrap = Bootstrap5(app)
+    Bootstrap5(app)
 
     #this is a much safer way to store passwords
-    bcrypt = Bcrypt(app)
+    Bcrypt(app)
 
     #a secret key for the session object
     #(it would be better to use an environment variable here)

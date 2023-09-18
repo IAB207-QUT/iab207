@@ -54,10 +54,10 @@ def check_upload_file(form):
 def comment(destination):  
     form = CommentForm()  
     #get the destination object associated to the page and the comment
-    destination = db.session.scalar(db.select(Destination).where(Destination.id==destination))
+    destination_obj = db.session.scalar(db.select(Destination).where(Destination.id==destination))
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text=form.text.data, destination=destination,
+      comment = Comment(text=form.text.data, destination=destination_obj,
                         user=current_user) 
       #here the back-referencing works - comment.destination is set
       # and the link is created

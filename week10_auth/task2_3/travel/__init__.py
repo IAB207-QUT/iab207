@@ -6,10 +6,9 @@ from flask_bcrypt import Bcrypt
 import datetime
 
 db = SQLAlchemy()
-app = Flask(__name__)
 
 def create_app():
-    
+    app = Flask(__name__)
     #we use this utility module to display forms quickly
     Bootstrap5(app)
 
@@ -47,16 +46,16 @@ def create_app():
     from . import auth
     app.register_blueprint(auth.authbp)
 
+    @app.errorhandler(404) 
+    # inbuilt function which takes error as parameter 
+    def not_found(e): 
+      return render_template("404.html", error=e)
+
+    #this creates a dictionary of variables that are available
+    #to all html templates
+    @app.context_processor
+    def get_context():
+      year = datetime.datetime.today().year
+      return dict(year=year)
+
     return app
-
-@app.errorhandler(404) 
-# inbuilt function which takes error as parameter 
-def not_found(e): 
-  return render_template("404.html", error=e)
-
-#this creates a dictionary of variables that are available
-#to all html templates
-@app.context_processor
-def get_context():
-   year = datetime.datetime.today().year
-   return dict(year=year)

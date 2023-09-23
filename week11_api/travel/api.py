@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from .models import Hotel
+from .models import Hotel, Room
 from . import db
 
 api=Flask(__name__)
@@ -34,7 +34,7 @@ def create_hotel():
 
 @api.route('/api/hotels/<int:hotelid>', methods=['DELETE'])
 def delete_hotel(hotelid):
-    hotel = Hotel.query.filter_by(id=hotelid).first()
+    hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotelid))
     db.session.delete(hotel)
     db.session.commit()
     return jsonify(message='deleted record'),200
@@ -42,7 +42,7 @@ def delete_hotel(hotelid):
 @api.route('/api/hotels/<int:hotelid>', methods=['PUT'])
 def update_hotel(hotelid):
     json_dict = request.get_json()
-    hotel = Hotel.query.filter_by(id=hotelid).first()
+    hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotelid))
     hotel.name = json_dict['name']
     hotel.description=json_dict['description']
     db.session.commit()

@@ -44,6 +44,13 @@ class Hotel(db.Model):
     __tablename__ = 'hotels'
     id = db.Column(db.Float(6), primary_key=True)
     name = db.Column(db.String(50), index=True, nullable=False)
-    room_rate = db.Column(db.Float(7))
     room_avail = db.Column(db.Boolean)
+    destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
+
+class Room(db.Model):
+    __tablename__ = 'rooms'
+    id = db.Column(db.Float(6), primary_key=True)
+    type = db.Column(db.String(50), index=True, nullable=False)
+    rate = db.Column(db.Float(7))
+    hotel_id = db.Column(db.Float, db.ForeignKey('hotels.id'))
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))

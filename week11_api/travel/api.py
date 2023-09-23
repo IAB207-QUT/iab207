@@ -1,10 +1,10 @@
-from flask import Flask, jsonify, request
-from .models import Hotel, Room
-from . import db
+from flask import Flask, Blueprint, jsonify, request
+from travel.models import Hotel, Room
+from travel import db
 
-api=Flask(__name__)
+api_bp = Blueprint('api', __name__, url_prefix='/api')
 
-@api.route('/api/hotels')
+@api_bp.route('/hotels')
 def get_hotel():
     hotels = db.session.scalars(db.select(Hotel)).all()
     hlist = [h.to_dictionary() for h in hotels]
@@ -14,7 +14,7 @@ def to_dict(self):
     h_dict = {b.name: str(getattr(self, b.name)) for b in self.__table__.columns}
     return h_dict
 
-@api.route('/api/hotels', methods=['POST'])
+@api_bp.route('/hotels', methods=['POST'])
 def create_hotel():
     json_dict = request.get_json()
     if not json_dict:
@@ -32,14 +32,14 @@ def create_hotel():
     db.session.commit()
     return jsonify(message='successfully created'),201
 
-@api.route('/api/hotels/<int:hotelid>', methods=['DELETE'])
+@api_bp.route('/hotels/<int:hotelid>', methods=['DELETE'])
 def delete_hotel(hotelid):
     hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotelid))
     db.session.delete(hotel)
     db.session.commit()
     return jsonify(message='deleted record'),200
 
-@api.route('/api/hotels/<int:hotelid>', methods=['PUT'])
+@api_bp.route('/hotels/<int:hotelid>', methods=['PUT'])
 def update_hotel(hotelid):
     json_dict = request.get_json()
     hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotelid))

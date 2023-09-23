@@ -45,6 +45,8 @@ def create_app():
     app.register_blueprint(destinations.destbp)
     from . import auth
     app.register_blueprint(auth.authbp)
+    from . import api
+    app.register_blueprint(api.api_bp)
     
     @app.errorhandler(404) 
     # inbuilt function which takes error as parameter 

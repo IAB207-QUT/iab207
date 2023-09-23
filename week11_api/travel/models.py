@@ -42,15 +42,37 @@ class Comment(db.Model):
     
 class Hotel(db.Model):
     __tablename__ = 'hotels'
-    id = db.Column(db.Float(6), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), index=True, nullable=False)
+    description = db.Column(db.String(500))
     room_avail = db.Column(db.Boolean)
+    # Define the one-to-many relationship with the Room model
+    rooms = db.relationship('Room', backref='hotel', lazy='dynamic')
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
+
+    def to_dict(self):
+        h_dict = {
+            b.name: str(getattr(self, b.name)) for b in self.__table__.columns
+        }
+        h_rooms = []
+        # Add details of related rooms to the hotel_data dictionary
+        for room in self.rooms:
+            room_data = {
+                'id': room.id,
+                'room_type': room.type,
+                # 'room_description': room.description,
+                'room_rate': room.rate
+            }
+            h_rooms.append(room_data)
+        h_dict['rooms'] = h_rooms
+
+        return h_dict
 
 class Room(db.Model):
     __tablename__ = 'rooms'
-    id = db.Column(db.Float(6), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(50), index=True, nullable=False)
+    num_rooms = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String(500))
     rate = db.Column(db.Float(7))
-    hotel_id = db.Column(db.Float, db.ForeignKey('hotels.id'))
-    destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
+    hotel_id = db.Column(db.Integer, db.ForeignKey('hotels.id'))

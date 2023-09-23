@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request
 from travel.models import Hotel, Room
 from travel import db
 
@@ -7,43 +7,44 @@ api_bp = Blueprint('api', __name__, url_prefix='/api')
 @api_bp.route('/hotels')
 def get_hotel():
     hotels = db.session.scalars(db.select(Hotel)).all()
-    hlist = [h.to_dictionary() for h in hotels]
-    return jsonify(hotels=hlist)
+    hotel_list = []
+    for hotel in hotels:
+        hotel_list.append(hotel.to_dict())
+    return jsonify(hotels=hotel_list)
 
-def to_dict(self):
-    h_dict = {b.name: str(getattr(self, b.name)) for b in self.__table__.columns}
-    return h_dict
-
+# Note you can have multiple functions with the same route path
+# as long as they deal with different HTTP methods.
 @api_bp.route('/hotels', methods=['POST'])
 def create_hotel():
     json_dict = request.get_json()
     if not json_dict:
         return {'message': 'No input data provided'}, 400
-    #creating sql alchemy hotel object from json dictionary
+    # Creating SQLAlchemy Hotel object from JSON dictionary
     hotel = Hotel(name=json_dict['name'], description=json_dict['description'],
-                  city=json_dict['city'],
+                  destination=json_dict['destination'],
                   amenities=json_dict['amenities'])
-        #reading the contained object - room
+    # Reading the nested Room object
     for r_dict in json_dict['rooms']:
         room = Room(type=r_dict['type'],num_rooms=r_dict['num_rooms'],
                     description=r_dict['description'])
-        room.hotel=hotel    #setting the hotel object
+        # Setting the Room's related Hotel object
+        room.hotel = hotel
     db.session.add(hotel)
     db.session.commit()
-    return jsonify(message='successfully created'),201
+    return jsonify(message='Successfully created new hotel!'), 201
 
-@api_bp.route('/hotels/<int:hotelid>', methods=['DELETE'])
-def delete_hotel(hotelid):
-    hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotelid))
+@api_bp.route('/hotels/<int:hotel_id>', methods=['DELETE'])
+def delete_hotel(hotel_id):
+    hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotel_id))
     db.session.delete(hotel)
     db.session.commit()
-    return jsonify(message='deleted record'),200
+    return jsonify(message='Record deleted!'), 200
 
-@api_bp.route('/hotels/<int:hotelid>', methods=['PUT'])
-def update_hotel(hotelid):
+@api_bp.route('/hotels/<int:hotel_id>', methods=['PUT'])
+def update_hotel(hotel_id):
     json_dict = request.get_json()
-    hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotelid))
+    hotel = db.session.scalar(db.select(Hotel).where(Hotel.id==hotel_id))
     hotel.name = json_dict['name']
-    hotel.description=json_dict['description']
+    hotel.description = json_dict['description']
     db.session.commit()
-    return jsonify(message='updated record'),200
+    return jsonify(message='Record updated!'), 200

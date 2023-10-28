@@ -1,0 +1,22 @@
+# dependencies from our travel website
+
+Bootstrap-Flask==2.1.0
+click==8.1.3
+dnspython==2.2.1
+email-validator==1.2.1
+Flask==2.3.2
+Flask-Login==0.6.2
+Flask-SQLAlchemy==3.0.5
+Flask-WTF==1.1.1
+flask-bcrypt==1.0.1
+greenlet==1.1.2
+idna==3.3
+importlib-metadata==4.12.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+SQLAlchemy==2.0.21
+Werkzeug==2.3.3
+WTForms==3.0.1
+zipp==3.8.1
+gunicorn==20.1.0

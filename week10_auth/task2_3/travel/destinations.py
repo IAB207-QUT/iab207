@@ -57,8 +57,7 @@ def comment(id):
     destination = db.session.scalar(db.select(Destination).where(Destination.id==id))
     if form.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text=form.text.data, destination=destination,
-                        user=current_user) 
+      comment = Comment(text=form.text.data, destination=destination, user=current_user) 
       #here the back-referencing works - comment.destination is set
       # and the link is created
       db.session.add(comment) 

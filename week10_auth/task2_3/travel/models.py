@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
 	#password is never stored in the DB, an encrypted password is stored
 	# the storage should be at least 255 chars long
     password_hash = db.Column(db.String(255), nullable=False)
-    # relation to call user.comments and comment.created_by
+    # relation to call user.comments and comment.name
     comments = db.relationship('Comment', backref='user')
 
     # string print method

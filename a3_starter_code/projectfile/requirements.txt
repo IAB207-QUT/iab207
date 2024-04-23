@@ -1,7 +1,0 @@
-flask==2.3.3
-werkzeug==2.3.7
-bootstrap-flask
-email-validator
-flask-login
-flask-sqlalchemy
-flask-wtf

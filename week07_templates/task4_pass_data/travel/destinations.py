@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 from .models import Destination, Comment
 
-#Use of blue print to group routes, 
+# Use of blue print to group routes, 
 # name - first argument is the blue print name 
 # import name - second argument - helps identify the root url for it 
 destbp = Blueprint('destination', __name__, url_prefix='/destinations')

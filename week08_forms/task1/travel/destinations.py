@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request #, redirect, url_for
 from .models import Destination, Comment
 from .forms import DestinationForm
 
-#Use of blueprint to group routes, 
+# Use of blueprint to group routes, 
 # name - first argument is the blue print name 
 # import name - second argument - helps identify the root url for it 
 destbp = Blueprint('destination', __name__, url_prefix='/destinations')
@@ -18,7 +18,7 @@ def create():
   form = DestinationForm()
   if form.validate_on_submit():
     print('Successfully created new travel destination')
-    #return redirect(url_for('destination.create'))
+    # return redirect(url_for('destination.create'))
   return render_template('destinations/create.html', form=form)
 
 def get_destination():

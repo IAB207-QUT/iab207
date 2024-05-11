@@ -27,18 +27,18 @@ def create_app():
     UPLOAD_FOLDER = '/static/image'
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
     
-    #initialise the login manager
+    # initialise the login manager
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
-    #create a user loader function takes userid and returns User
+    # create a user loader function takes userid and returns User
     from .models import User  # importing here to avoid circular references
     @login_manager.user_loader
     def load_user(user_id):
-        return User.query.get(int(user_id))
+        return db.session.scalar(db.select(User).where(User.id==user_id))
 
-    #add Blueprints
+    # add Blueprints
     from . import views
     app.register_blueprint(views.mainbp)
     from . import destinations
@@ -51,8 +51,8 @@ def create_app():
     def not_found(e): 
       return render_template("404.html", error=e)
 
-    #this creates a dictionary of variables that are available
-    #to all html templates
+    # this creates a dictionary of variables that are available
+    # to all html templates
     @app.context_processor
     def get_context():
       year = datetime.datetime.today().year

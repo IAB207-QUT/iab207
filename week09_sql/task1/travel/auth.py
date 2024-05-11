@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from .forms import LoginForm, RegisterForm
 
-#create a blueprint
+# create a blueprint
 authbp = Blueprint('auth', __name__ )
 
 @authbp.route('/login', methods=['GET', 'POST'])

@@ -15,7 +15,7 @@ def login():
     email = request.values.get("email")
     passwd = request.values.get("pwd")
     print (f"Email: {email}\nPassword: {passwd}")
-    #store email in session
+    # store email in session
     session['email'] = request.values.get('email')
     return render_template('login.html')
 

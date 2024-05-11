@@ -22,7 +22,7 @@ def create():
 
 @destbp.route('/<id>/comment', methods = ['GET', 'POST'])
 def comment(id):
-  #here the form is created  form = CommentForm()
+  # here the form is created  form = CommentForm()
   form = CommentForm()
   if form.validate_on_submit():	#this is true only in case of POST method
     print(f"The following comment has been posted: {form.text.data}")

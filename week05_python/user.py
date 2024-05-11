@@ -28,5 +28,4 @@ class FrequentTraveller(User):
     def __repr__(self):
         str = super().__repr__()
         str = str + f" Traveller ID: {self.travellerID}"
-        #str = str + "Traveller ID: {0}".format(self.travellerID)
         return str

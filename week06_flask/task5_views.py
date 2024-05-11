@@ -12,4 +12,4 @@ def login():
     email = request.values.get("email")
     passwd = request.values.get("pwd")
     print (f"Email: {email}\nPassword: {passwd}")
-    return render_template('login.html') #file must be in templates folder
+    return render_template('login.html') # file must be in templates folder

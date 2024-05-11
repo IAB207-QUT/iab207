@@ -1,4 +1,4 @@
-#import flask - from the package import class
+# import flask - from 'package' import 'Class'
 from flask import Flask 
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -6,7 +6,7 @@ from flask_login import LoginManager
 
 db = SQLAlchemy()
 
-#create a function that creates a web application
+# create a function that creates a web application
 # a web server will run this web application
 def create_app():
   
@@ -14,14 +14,14 @@ def create_app():
     # Should be set to false in a production environment
     app.debug = True
     app.secret_key = 'somesecretkey'
-    #set the app configuration data 
+    # set the app configuration data 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
-    #initialize db with flask app
+    # initialise db with flask app
     db.init_app(app)
 
     Bootstrap5(app)
     
-    #initialize the login manager
+    # initialise the login manager
     login_manager = LoginManager()
     
     # set the name of the login function that lets user login
@@ -34,10 +34,8 @@ def create_app():
     from .models import User
     @login_manager.user_loader
     def load_user(user_id):
-       return User.query.get(int(user_id))
+       return db.session.scalar(db.select(User).where(User.id==user_id))
 
-    # importing views module here to avoid circular references
-    # a commonly used practice.
     from . import views
     app.register_blueprint(views.main_bp)
 

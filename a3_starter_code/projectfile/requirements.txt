@@ -1,7 +1,8 @@
-flask==2.3.3
-werkzeug==2.3.7
+flask
+werkzeug
 bootstrap-flask
 email-validator
 flask-login
 flask-sqlalchemy
 flask-wtf
+flask-bcrypt

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <!--Jumbotron-->
+      <div class="container">
+         <div class="row justify-content-center mt-5 pb-4">
+            <div class="col-md-8">
+               <div class="card shadow p-5 mb-5 bg-light">
+                  <h1 class="text-center mb-3">Find our best travel deals</h1>
+
+                  <form class="form-inline d-flex flex-nowrap" action="{{url_for('main.search')}}" >
+                     <input type="text" name="search" class="form-control flex-grow-1 my-1 mr-sm-2" id="SearchForm">
+                     <button type="submit" class="flex-shrink-1 btn btn-primary my-1">Submit</button>
+                   </form>
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+{% endblock %}
+
+{% block content %}   
+      <div class="container">
+         <div class="row mt-5 mb-5 justify-content-center">
+            <div class="col-md-10">
+               <div class="media border p-3 d-flex justify-content-start">
+                  <img class="align-self-center me-3" style="max-width:120px"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png"
+                     alt="Planet Earth">
+                  <div class="align-self-center media-body">
+                     <h5 class="mt-0">Find the best destinations on earth</h5>
+                     <p class="d-none d-sm-block">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                        scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                        turpis. Fusce condimentum nunc ac nisi vulputate fringilla.</p>
+                     <a href="#" class="btn btn-primary">Join Now</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="card-group">
+            {% for destination in destinations %}
+            <div class="card mx-3">
+               <img class="card-img-top"
+                  src="{{ destination.image }}" alt="destination picture">
+               <div class="card-body">
+                  <h5 class="card-title">{{ destination.name }}</h5>
+                  <p class="card-text">{{ destination.description }}</p>
+               </div>
+               <div class="card-footer"><a href="{{ url_for('destination.show', id=destination.id) }}" class ="btn btn-danger"> View Details </a></div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h1>Add Travel Destination</h1>
+        <p>Enter a country that you will help clients travel to.</p>
+        {{ render_form(form) }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

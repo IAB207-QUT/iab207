@@ -18,9 +18,10 @@
 The goal of this section is to replace local embedding generation using the `sentence-transformers` library with remote embedding generation via the Hugging Face Inference provider. The transition requires only a small number of code changes:
 
 1. Install the required dependencies, particularly `huggingface_hub`.
-2. Update `__init__.py` to create an Inference Client instead of a local `SentenceTransformer` model. You will also need to store your Hugging Face API token securely using environment variables rather than hard-coding it in files that may be committed to GitHub.
-3. Update the code that generates embeddings for search queries. The required changes are minimal.
-4. Update the code that generates embeddings when new events or items are added. Again, only minor changes are required.
+2. Store our HF Access Token as a `.env` file so it can be loaded as an environment variable when the application starts.
+3. Update `__init__.py` to create an Inference Client instead of a local `SentenceTransformer` model. You will also need to store your Hugging Face API token securely using environment variables rather than hard-coding it in files that may be committed to GitHub.
+4. Update the code that generates embeddings for search queries. The required changes are minimal.
+5. Update the code that generates embeddings when new events or items are added. Again, only minor changes are required.
 
 To demonstrate we shall use the travel web application from the tutorial i.e. this [start point](https://download-directory.github.io/?url=https://github.com/IAB207-QUT/iab207/tree/main/week12_final/Task3_4/).
 
@@ -32,6 +33,15 @@ pip install numpy dotenv huggingface_hub
 - *numpy*: required for our cosine similarity function. We did use this previously but didn't install as it was included automatically with sentence-transformers
 - *dotenv*: allows our application to load configuration values from a .env file into environment variables when the application starts. This is useful for storing sensitive information, such as API keys, outside of the source code.
 - *huggingface_hub*: the official Python library for interacting with Hugging Face services.
+
+### Step 2: Store our Token in a `.env` file
+
+The file should be located inside the `travel` (package) folder that contains our `__init__.py`. It should contain your HF Access Token as follows:
+
+contents of `.env`
+```
+HF_API_KEY=hf_xxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 **Why not simply set the keys directly in the source code?**
 
@@ -49,9 +59,6 @@ only present in the Code Project Directory (not the Static / Media Web Space
 that is served bye the web server). Alternatively, some hosting platforms
 have specific secret-management features that can be utilised.
 
-### Step 2: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
-
-
-
-### Step 3: Update `views.py` > `search()` where we generate embeddings for search queries.
-### Step 4: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.
+### Step 3: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
+### Step 4: Update `views.py` > `search()` where we generate embeddings for search queries.
+### Step 5: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.

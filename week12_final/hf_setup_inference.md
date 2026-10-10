@@ -34,14 +34,21 @@ pip install numpy dotenv huggingface_hub
 - *dotenv*: allows our application to load configuration values from a .env file into environment variables when the application starts. This is useful for storing sensitive information, such as API keys, outside of the source code.
 - *huggingface_hub*: the official Python library for interacting with Hugging Face services.
 
-### Step 2: Store our Token in a `.env` file
+### Step 2: Store the HF Access Token in a `.env` file
 
 The file should be located inside the `travel` (package) folder that contains our `__init__.py`. It should contain your HF Access Token as follows:
 
-contents of `.env`
+**contents of `.env`**
 ```
 HF_API_KEY=hf_xxxxxxxxxxxxxxxxxxxxxxxx
 ```
+To prevent your API token from being accidientally uploaded to GitHub, ensure that the `.env` file is listed in your `.gitignore` file
+
+**contents of `.gitignore` (at a minimum)**
+```
+.env
+```
+
 
 **Why not simply set the keys directly in the source code?**
 

@@ -83,4 +83,18 @@ Unlike `SentenceTransformer`, the `InferenceClient` does not load a specific mod
 ---
 
 ### Step 4: Update `views.py` > `search()` where we generate embeddings for search queries.
+
+Update where we create the embedding for the query with
+```
+query_embedding = encoder.feature_extraction(request.args['search'], model="sentence-transformers/all-MiniLM-L6-v2")
+```
+
 ### Step 5: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.
+
+Update where we create the embedding for the destination description
+```
+embedding = encoder.feature_extraction(form.description.data, model="sentence-transformers/all-MiniLM-L6-v2")
+```
+
+
+

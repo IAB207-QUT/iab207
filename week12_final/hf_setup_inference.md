@@ -29,10 +29,29 @@ To demonstrate we shall use the travel web application from the tutorial i.e. th
 ```
 pip install numpy dotenv huggingface_hub
 ```
-- numpy: required for our cosine similarity function. We did use this previously but didn't install as it was included automatically with sentence-transformers
-- dotenv: allows our application to load configuration values from a .env file into environment variables when the application starts. This is useful for storing sensitive information, such as API keys, outside of the source code.
-- huggingface_hub: the official Python library for interacting with Hugging Face services.
+- *numpy*: required for our cosine similarity function. We did use this previously but didn't install as it was included automatically with sentence-transformers
+- *dotenv*: allows our application to load configuration values from a .env file into environment variables when the application starts. This is useful for storing sensitive information, such as API keys, outside of the source code.
+- *huggingface_hub*: the official Python library for interacting with Hugging Face services.
 
-### Step 2: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model. 
+**Why not simply set the keys directly in the source code?**
+
+It is a bad idea to store secrets in code files that may eventually be
+committed to a repository. 
+
+Instead, the secrets can be stored in an .env file which is loaded at runtime
+with the values accessed through the operating system environment using
+os.getenv().
+
+This .env file is added to .gitignore so that it is never committed to GitHub.
+
+On deployment, you can place the .env file on the server so long as it is
+only present in the Code Project Directory (not the Static / Media Web Space
+that is served bye the web server). Alternatively, some hosting platforms
+have specific secret-management features that can be utilised.
+
+### Step 2: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
+
+
+
 ### Step 3: Update `views.py` > `search()` where we generate embeddings for search queries.
 ### Step 4: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.

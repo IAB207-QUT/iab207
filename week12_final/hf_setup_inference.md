@@ -36,7 +36,7 @@ pip install numpy dotenv huggingface_hub
 
 ### Step 2: Store the HF Access Token in a `.env` file
 
-The file should be located inside the `travel` (package) folder that contains our `__init__.py`. It should contain your HF Access Token as follows:
+`.env` should be located inside the `travel` (package) folder that already contains our `__init__.py`. It should contain your HF Access Token as follows:
 
 **contents of `.env`**
 ```
@@ -53,8 +53,26 @@ To prevent your API token from being accidientally uploaded to GitHub, ensure th
 
 There are bots that actively scan GitHub repositories for API keys, so it is a bad idea to store secrets in code files that may eventually be committed to a repository. Instead, the secrets can be stored in an .env file which is loaded at runtime with the values accessed through the operating system environment using `os.getenv()`.
 
-This .env file is added to `.gitignore` so that it is never committed to GitHub. On deployment, you can place the .env file on the server so long as it is only present in the Code Project Directory (not the Static / Media Web Space that is served bye the web server). Alternatively, some hosting platforms have specific secret-management features that can be utilised.
+This `.env` file is added to `.gitignore` so that it is never committed to GitHub. On deployment, you can place the `.env` file on the server so long as it is only present in the Code Project Directory (not the Static / Media Web Space that is served by the web server). Alternatively, some hosting platforms have specific secret-management features that can be utilised.
 
 ### Step 3: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
+
+Add the following dependencies at underneath the existing ones
+```
+import os
+from dotenv import load_dotenv
+from huggingface_hub import InferenceClient
+```
+Next, locate and remove the code that creates the sentence-transformer model and replace it with
+```
+# load environment variables
+load_dotenv()
+# set up model
+encoder = InferenceClient( provider="hf-inference", api_key=os.getenv("HF_API_KEY"))
+```
+When the application starts, `load_dotenv()` reads the `HF_API_KEY` value from your `.env` file and makes it available as an environment variable. The InferenceClient then uses this token to authenticate with the Hugging Face Inference provider. Later on this will allow us to generate embeddings remotely, eliminating the need to download and run the model locally.
+
+Unlike `SentenceTransformer`, the `InferenceClient` does not load a specific model when it is created. Instead, the model is specified each time an embedding request is made.
+
 ### Step 4: Update `views.py` > `search()` where we generate embeddings for search queries.
 ### Step 5: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.

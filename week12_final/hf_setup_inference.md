@@ -100,5 +100,5 @@ embedding = encoder.feature_extraction(form.description.data, model="sentence-tr
 
 ## Test your application!
 
-Ensure that everything is working before attempting to deploy.
+Ensure that everything is working before attempting to [deploy](https://github.com/IAB207-QUT/iab207/blob/main/week12_final/hf_deploy.md).
 

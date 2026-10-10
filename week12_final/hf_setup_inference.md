@@ -14,14 +14,6 @@
 2. **Create an [Access Token]([)](https://huggingface.co/settings/tokens)** by providing a name and selecting the Inference Preset. This will allow applications using the token to make calls to Inference Providers and endpoints. Store the token in a safe place for later use.
 
 ## Configure Your Application to Use the Hugging Face Inference Provider
-The goal is to switch from using local embedding generation that uses Sentence Transformers to Hugging Face Inference. This can be achieved with the following steps:
-1. Install additional dependencies (in particular huggingface_hub)
-2. Update the package constructor (__init__.py) so that our encoder object is now attached to the Hugging Face Inference. We also need to be careful where we store our token as we cannot put it in code that might be committed to GithHub
-3. Update the code that creates the embedding for the search query (very minor)
-4. Update the code that creates the embedding when a new item is added (very minor)
-
-
-## Configure Your Application to Use the Hugging Face Inference Provider
 
 The goal of this section is to replace local embedding generation using the `sentence-transformers` library with remote embedding generation via the Hugging Face Inference provider. The transition requires only a small number of code changes:
 
@@ -31,3 +23,11 @@ The goal of this section is to replace local embedding generation using the `sen
 4. Update the code that generates embeddings when new events or items are added. Again, only minor changes are required.
 
 To demonstrate we shall use the travel web application from the tutorial i.e. this [start point](https://download-directory.github.io/?url=https://github.com/IAB207-QUT/iab207/tree/main/week12_final/Task3_4/).
+
+### Step 1: Install the required dependencies
+
+xx
+
+### Step 2: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model. 
+### Step 3: Update `views.py` > `search()` where we generate embeddings for search queries.
+### Step 4: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.

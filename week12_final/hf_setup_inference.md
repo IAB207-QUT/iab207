@@ -63,7 +63,7 @@ This `.env` file is added to `.gitignore` so that it is never committed to GitHu
 
 ### Step 3: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
 
-Add the following dependencies at underneath the existing ones
+Remove the `sentence_transformers` import and add the following new imports underneath the existing ones. 
 ```
 import os
 from dotenv import load_dotenv
@@ -100,5 +100,5 @@ embedding = encoder.feature_extraction(form.description.data, model="sentence-tr
 
 ## Test your application!
 
-
+Ensure that everything is working before attempting to deploy.
 

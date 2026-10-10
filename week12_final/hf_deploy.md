@@ -1,0 +1,21 @@
+# Deploy on PythonAnywhere using the Hugging Face (HF) Inference Connection
+
+## Before you begin
+
+- **This activity is optional and is not required for assessment.** You can still achieve full marks for deployment by deploying an earlier version of your dynamic website that does not include the AI features.
+- **Deploy a non AI version of the site first**. Follow the instructions available on Canvas and deploy a dynamic website that does not include the AI features. This initial step will allow to build knowledge incrementally.
+- **Ensure that your application is fully functional when running locally using the HF Inference Connection (see here)**. Troubleshooting during deployment can be difficult because access to logs is limited and the deployment interface is not particularly user-friendly. Verify that all functionality (including AI functionality with HF Inference Connection) works correctly before attempting deployment.
+
+---
+
+## Create a PythonAnywhere account and upload your files
+
+- **Create your account**. Hopefully you followed the advice to initially install a non AI version of your dynamic website so you already have a [PythonAnywhere](https://www.pythonanywhere.com/) account. If not then you should create one.
+
+- **Perhaps don't use pip freeze**. You may be tempted to use pip freeze to generate a requirements.txt file, but it records all packages installed in the current environment, including any unrelated dependencies that you installed during experimentation. For PythonAnywhere, it is often cleaner to create a fresh virtual environment and install only the packages your application actually requires using `pip`. For example, packages such as `sentence-transformers` (if you forgot to uninstall it) have very large dependencies (often exceeding 1 GB once models are downloaded).
+
+There are two ways of uploading your files:
+1. In a terminal (console) in PythonAnywhere you can use `git clone` to
+
+
+

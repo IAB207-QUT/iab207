@@ -10,4 +10,4 @@
 
 ## Obtain your HF Token
 
-
+1. Create a [Hugging Face](https://huggingface.co/) account and add $5 of credit via the [Billing page](https://huggingface.co/settings/billing). While new accounts may receive a small amount of free credit for initial testing, adding credit is strongly recommended if you plan to complete this activity and essential if you intend to submit the AI-enabled version of your application for assessment. $5 is the minimum amount you can add and this should be more than enough for this activity.

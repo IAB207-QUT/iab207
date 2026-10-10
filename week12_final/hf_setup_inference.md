@@ -26,7 +26,12 @@ To demonstrate we shall use the travel web application from the tutorial i.e. th
 
 ### Step 1: Install the required dependencies
 
-xx
+```
+pip install numpy dotenv huggingface_hub
+```
+- numpy: required for our cosine similarity function. We did use this previously but didn't install as it was included automatically with sentence-transformers
+- dotenv: allows our application to load configuration values from a .env file into environment variables when the application starts. This is useful for storing sensitive information, such as API keys, outside of the source code.
+- huggingface_hub: the official Python library for interacting with Hugging Face services.
 
 ### Step 2: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model. 
 ### Step 3: Update `views.py` > `search()` where we generate embeddings for search queries.

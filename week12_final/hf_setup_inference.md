@@ -49,22 +49,11 @@ To prevent your API token from being accidientally uploaded to GitHub, ensure th
 .env
 ```
 
-
 **Why not simply set the keys directly in the source code?**
 
-It is a bad idea to store secrets in code files that may eventually be
-committed to a repository. 
+There are bots that actively scan GitHub repositories for API keys, so it is a bad idea to store secrets in code files that may eventually be committed to a repository. Instead, the secrets can be stored in an .env file which is loaded at runtime with the values accessed through the operating system environment using `os.getenv()`.
 
-Instead, the secrets can be stored in an .env file which is loaded at runtime
-with the values accessed through the operating system environment using
-os.getenv().
-
-This .env file is added to .gitignore so that it is never committed to GitHub.
-
-On deployment, you can place the .env file on the server so long as it is
-only present in the Code Project Directory (not the Static / Media Web Space
-that is served bye the web server). Alternatively, some hosting platforms
-have specific secret-management features that can be utilised.
+This .env file is added to `.gitignore` so that it is never committed to GitHub. On deployment, you can place the .env file on the server so long as it is only present in the Code Project Directory (not the Static / Media Web Space that is served bye the web server). Alternatively, some hosting platforms have specific secret-management features that can be utilised.
 
 ### Step 3: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
 ### Step 4: Update `views.py` > `search()` where we generate embeddings for search queries.

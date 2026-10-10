@@ -15,7 +15,8 @@
 - **Perhaps don't use pip freeze**. You may be tempted to use pip freeze to generate a requirements.txt file, but it records all packages installed in the current environment, including any unrelated dependencies that you installed during experimentation. For PythonAnywhere, it is often cleaner to create a fresh virtual environment and install only the packages your application actually requires using `pip`. For example, packages such as `sentence-transformers` (if you forgot to uninstall it) have very large dependencies (often exceeding 1 GB once models are downloaded).
 
 There are two ways of uploading your files:
-1. In a terminal (console) in PythonAnywhere you can use `git clone` to
+1. In a terminal (console) in PythonAnywhere you can use `git clone` to create a copy of your whole repository.
+2. You can upload the files as a zip file using PythonAnywhere > files > upload. You can easily obtain a zip of any public folder on GitHub using [download-directory.github.io/](https://download-directory.github.io/). In this example we will use the following [zip file]([)](https://download-directory.github.io/?url=https://github.com/IAB207-QUT/iab207/tree/main/week12_final/Task3_4_with_hf/).
 
 
 

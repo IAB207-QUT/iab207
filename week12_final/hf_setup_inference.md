@@ -1,4 +1,4 @@
-# Set Up the Hugging Face (HF) Inference Connection
+# Set up the Hugging Face (HF) Inference Connection
 
 ## Before you begin
 

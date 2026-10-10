@@ -40,7 +40,7 @@ pip install numpy dotenv huggingface_hub
 
 ### Step 2: Store the HF Access Token in a `.env` file
 
-`.env` should be located inside the `travel` (package) folder that already contains our `__init__.py`. It should contain your HF Access Token as follows:
+Create a `.env` located inside the `travel` (package) folder that already contains `__init__.py`. It should contain your HF Access Token as follows:
 
 **contents of `.env`**
 ```

@@ -25,6 +25,8 @@ The goal of this section is to replace local embedding generation using the `sen
 
 To demonstrate we shall use the travel web application from the tutorial i.e. this [start point](https://download-directory.github.io/?url=https://github.com/IAB207-QUT/iab207/tree/main/week12_final/Task3_4/).
 
+---
+
 ### Step 1: Install the required dependencies
 
 ```
@@ -33,6 +35,8 @@ pip install numpy dotenv huggingface_hub
 - *numpy*: required for our cosine similarity function. We did use this previously but didn't install as it was included automatically with sentence-transformers
 - *dotenv*: allows our application to load configuration values from a .env file into environment variables when the application starts. This is useful for storing sensitive information, such as API keys, outside of the source code.
 - *huggingface_hub*: the official Python library for interacting with Hugging Face services.
+
+---
 
 ### Step 2: Store the HF Access Token in a `.env` file
 
@@ -55,6 +59,8 @@ There are bots that actively scan GitHub repositories for API keys, so it is a b
 
 This `.env` file is added to `.gitignore` so that it is never committed to GitHub. On deployment, you can place the `.env` file on the server so long as it is only present in the Code Project Directory (not the Static / Media Web Space that is served by the web server). Alternatively, some hosting platforms have specific secret-management features that can be utilised.
 
+---
+
 ### Step 3: Update `__init__.py` to create an Inference Client instead of a local SentenceTransformer model.
 
 Add the following dependencies at underneath the existing ones
@@ -73,6 +79,8 @@ encoder = InferenceClient( provider="hf-inference", api_key=os.getenv("HF_API_KE
 When the application starts, `load_dotenv()` reads the `HF_API_KEY` value from your `.env` file and makes it available as an environment variable. The InferenceClient then uses this token to authenticate with the Hugging Face Inference provider. Later on this will allow us to generate embeddings remotely, eliminating the need to download and run the model locally.
 
 Unlike `SentenceTransformer`, the `InferenceClient` does not load a specific model when it is created. Instead, the model is specified each time an embedding request is made.
+
+---
 
 ### Step 4: Update `views.py` > `search()` where we generate embeddings for search queries.
 ### Step 5: Update `destinations.py` > `create` where we generates embeddings for Destination descriptions.

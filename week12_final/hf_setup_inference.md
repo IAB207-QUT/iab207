@@ -10,7 +10,7 @@
 
 ## Obtain your HF Token
 
-1. **Create a [Hugging Face](https://huggingface.co/) account and add $5 of credit** via the [Billing page](https://huggingface.co/settings/billing). While new accounts may receive a small amount of free credit for initial testing, adding credit is strongly recommended if you plan to complete this activity and essential if you intend to submit the AI-enabled version of your application for assessment. $5 is the minimum amount you can add and this should be more than enough for this activity. Return to the billing page to track your usage quota.
+1. **Create a [Hugging Face](https://huggingface.co/) account and add $5 of credit** via the [Billing page](https://huggingface.co/settings/billing). While new accounts may receive a small amount of free credit for initial testing, adding credit is strongly recommended if you plan to complete this activity and essential if you intend to submit the AI-enabled version of your application for assessment. $5 is the minimum amount you can add which should be more than enough. Return to the billing page to track your usage quota.
 2. **Create an [Access Token]([)](https://huggingface.co/settings/tokens)** by providing a name and selecting the Inference Preset. This will allow applications using the token to make calls to Inference Providers and endpoints. Store the token in a safe place for later use.
 
 ## Configure Your Application to Use the Hugging Face Inference Provider
@@ -18,8 +18,8 @@
 The goal of this section is to replace local embedding generation using the `sentence-transformers` library with remote embedding generation via the Hugging Face Inference provider. The transition requires only a small number of code changes:
 
 1. Install the required dependencies, particularly `huggingface_hub`.
-2. Store our HF Access Token as a `.env` file so it can be loaded as an environment variable when the application starts.
-3. Update `__init__.py` to create an Inference Client instead of a local `SentenceTransformer` model. You will also need to store your Hugging Face API token securely using environment variables rather than hard-coding it in files that may be committed to GitHub.
+2. Store our HF Access Token as a `.env` file so it can be securely loaded as an environment variable when the application starts.
+3. Update `__init__.py` to create an Inference Client instead of a local `SentenceTransformer` model.
 4. Update the code that generates embeddings for search queries. The required changes are minimal.
 5. Update the code that generates embeddings when new events or items are added. Again, only minor changes are required.
 

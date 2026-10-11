@@ -28,7 +28,11 @@ HF_API_KEY=hf_xxxxx_use_your_key_xxxxx
 
 After writing the contents you can exit nano using `ctrl + x` and saving. Take note of the folder structure using the terminal command `pwd` (print working directory) as you will need it for the next step. For my example the folder structure was `home/jasonqut/travel-project/travel/` which means the exact location of the `.env` file is `home/jasonqut/travel-project/travel/nano`. Record this exact location.
 
-**Important:** Now update the `` in `__init__.py` with this *explicit path* to the .env file e.g. `load_dotenv()` becomes `load_dotenv("/home/jasonqut/travel-project/travel/.env")` in my case.
+**Important:** Now update the `load_dotenv()` in `__init__.py` to use an *explicit path* to the .env file
+
+`load_dotenv()`
+becomes
+load_dotenv("/home/jasonqut/travel-project/travel/.env")` (in my case)
 
 
 

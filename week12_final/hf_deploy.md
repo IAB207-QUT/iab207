@@ -4,7 +4,7 @@
 
 - **This activity is optional and is not required for assessment.** You can still achieve full marks for deployment by deploying an earlier version of your dynamic website that does not include the AI features.
 - **Deploy a non AI version of the site first**. Follow the instructions available on Canvas and deploy a dynamic website that does not include the AI features. This initial step will allow to build knowledge incrementally.
-- **Ensure that your application is fully functional when running locally using the HF Inference Connection ([see here]([url](https://github.com/IAB207-QUT/iab207/blob/main/week12_final/hf_setup_inference.md)))**. Troubleshooting during deployment can be difficult because access to logs is limited and the deployment interface is not particularly user-friendly. Verify that all functionality (including AI functionality with HF Inference Connection) works correctly before attempting deployment.
+- **Ensure that your application is fully functional when running locally using the HF Inference Connection ([see here](https://github.com/IAB207-QUT/iab207/blob/main/week12_final/hf_setup_inference.md)**. Troubleshooting during deployment can be difficult because access to logs is limited and the deployment interface is not particularly user-friendly. Verify that all functionality (including AI functionality with HF Inference Connection) works correctly before attempting deployment.
 
 ---
 

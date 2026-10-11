@@ -32,7 +32,7 @@ After writing the contents you can exit nano using `ctrl + x` and saving. Take n
 
 ## Create a Virtual Environment and install your requirements
 
-In the PythonAnywhere console: `mkvirtualenv venv --python=/usr/bin/python3.13`. In this case we called the virtual environment `venv` so it will be stored in `/home/<username>/.virtualenvs/venv/` or `/home/jasonqut/.virtualenvs/venv/` in my case. You need to remember the location for a later step, so perhaps navigate to ``/home/<username>/.virtualenvs/` and take a look that it is present before writing down the path for use later.
+Using the PythonAnywhere console, use the command `mkvirtualenv venv --python=/usr/bin/python3.13` to create a python Virtual Environment. In this case we called the virtual environment `venv` so it will be stored in `/home/<username>/.virtualenvs/venv/` or `/home/jasonqut/.virtualenvs/venv/` in my case. You need to remember the location for a later step, so perhaps navigate to ``/home/<username>/.virtualenvs/` and take a look that it is present before writing down the path for use later.
 
 Note how your console prompt now begins with `> (venv)`. This is because the Virtual Environment was enabled automatically after installation so that you can begin installing your requirements
 
@@ -44,6 +44,16 @@ You can now create your web application instance on PythonAnywhere
 
 ## Create Web App instance using PythonAnywhere dashboard
 
+1. Go to PythonAnywhere homepage (dashboard) > web > add a new web app and select Flask, select Python 3.13
+2. Define the app entry point (path to main.py that contains create_app method). In my case this was `/home/jasonqut/travel-project/travel/main.py`
+3. Update the WSGI config file (located in the 'Code' section, 3rd file), replacing bottom line with the following code:
+```
+# import flask app but need to call it "application" for WSGI to work
+from travel import create_app
+application = create_app()
+```
+4. Return to Web Tab and configure the virtual environment (located in 'Virtualenv' section) to point at the one that you just created e.g. /home/<username>/.virtualenvs/venv/
+5. Reload and test site using Green button at the top of the page
 
 
 

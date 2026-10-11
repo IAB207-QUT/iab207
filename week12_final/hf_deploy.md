@@ -32,7 +32,7 @@ After writing the contents you can exit nano using `ctrl + x` and saving. Take n
 
 `load_dotenv()`
 becomes
-load_dotenv("/home/jasonqut/travel-project/travel/.env")` (in my case)
+1load_dotenv("/home/jasonqut/travel-project/travel/.env")` (in my case)
 
 
 

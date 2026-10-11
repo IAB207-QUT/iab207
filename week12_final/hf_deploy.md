@@ -44,16 +44,21 @@ You can now create your web application instance on PythonAnywhere
 
 ## Create Web App instance using PythonAnywhere dashboard
 
-1. Go to PythonAnywhere homepage (dashboard) > web > add a new web app and select Flask, select Python 3.13
-2. Define the app entry point (path to main.py that contains create_app method). In my case this was `/home/jasonqut/travel-project/travel/main.py`
-3. Update the WSGI config file (located in the 'Code' section, 3rd file), replacing bottom line with the following code:
+On PythonAnywhere homepage dashboard select Web Tab. Add a new web app with options:
+- Flask
+- Python 3.13
+- Quickstart new Flask project: provide the path to the `main.py` file (in my case `/home/jasonqut/project-travel/main.py`). This is the entry point for the web application.
+
+We now must adjust the settings of our Web App
+1. Update WSGI configuration file: See section called "Code:" and click on the 3rd link down and replace the bottom line with the following code:
 ```
 # import flask app but need to call it "application" for WSGI to work
 from travel import create_app
 application = create_app()
 ```
-4. Return to Web Tab and configure the virtual environment (located in 'Virtualenv' section) to point at the one that you just created e.g. /home/<username>/.virtualenvs/venv/
-5. Reload and test site using Green button at the top of the page and then click on the link at the top to test your site.
+Don't forget to save
+2. Tell the Web App to use our Virtual Environment: Return to the Web Tab and see section called "Virtualenv:" and set the path to Virtual Environment point at the one that you created. For me the path was `/home/jasonqut/.virtualenvs/venv/`.
+3. Reload and test site using Green button at the top of the page and then click on the link at the top to test your site including semantic search and creating new items.
 
 
 

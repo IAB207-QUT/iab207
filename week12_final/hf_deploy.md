@@ -6,8 +6,6 @@
 - **Deploy a non AI version of the site first**. Follow the instructions available on Canvas and deploy a dynamic website that does not include the AI features. This initial step will allow to build knowledge incrementally.
 - **Ensure that your application is fully functional when running locally using the HF Inference Connection ([see here](https://github.com/IAB207-QUT/iab207/blob/main/week12_final/hf_setup_inference.md))**. Troubleshooting during deployment can be difficult because access to logs is limited and the deployment interface is not particularly user-friendly. Verify that all functionality (including AI functionality with HF Inference Connection) works correctly before attempting deployment.
 
----
-
 ## Create a PythonAnywhere account and upload your files
 
 - **Create your account**. Hopefully you followed the advice to initially install a non AI version of your dynamic website so you already have a [PythonAnywhere](https://www.pythonanywhere.com/) account. If not then you should create one.
@@ -25,7 +23,7 @@ Inside the package folder (e.g. travel for this example) we must create a `.env`
 
 Contents of `.env` should be
 ```
-HF_API_KEY=hf_xxxxxxxxxxxxxxxxxxxxxxxx
+HF_API_KEY=hf_xxxxx_use_your_key_xxxxx
 ```
 
 After writing the contents you can exit nano using `ctrl + x` and saving. Take note of the folder structure using the terminal command `pwd` (print working directory) as you will need it for the next step. For my example the folder structure was `home/jasonqut/travel-project/travel/` which means the exact location of the `.env` file is `home/jasonqut/travel-project/travel/nano`. Record this exact location.

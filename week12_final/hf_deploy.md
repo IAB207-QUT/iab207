@@ -60,7 +60,7 @@ Don't forget to save
 
 A WSGI configuration file is a Python file that tells a web server how to start and communicate with your Python web application. WSGI stands for Web Server Gateway Interface.
 
-2. Tell the Web App to use our Virtual Environment: Return to the Web Tab and see section called "Virtualenv:" and set the path to Virtual Environment point at the one that you created. For me the path was `/home/jasonqut/.virtualenvs/venv/`.
+2. Tell the Web App to use our Virtual Environment: Return to the Web Tab and see section called "Virtualenv:" and enter the path to the Virtual Environment that you created. For me this was `/home/jasonqut/.virtualenvs/venv/`.
 
 3. Reload and test site using Green button at the top of the page and then click on the link at the top to test your site including semantic search and creating new items.
 

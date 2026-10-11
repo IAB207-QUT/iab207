@@ -53,7 +53,7 @@ from travel import create_app
 application = create_app()
 ```
 4. Return to Web Tab and configure the virtual environment (located in 'Virtualenv' section) to point at the one that you just created e.g. /home/<username>/.virtualenvs/venv/
-5. Reload and test site using Green button at the top of the page
+5. Reload and test site using Green button at the top of the page and then click on the link at the top to test your site.
 
 
 

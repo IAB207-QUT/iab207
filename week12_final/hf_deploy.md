@@ -30,6 +30,22 @@ After writing the contents you can exit nano using `ctrl + x` and saving. Take n
 
 **Important:** Now update the `load_dotenv()` in `__init__.py` to use an *explicit path* to the `.env` file. `load_dotenv()` becomes `load_dotenv("/home/jasonqut/travel-project/travel/.env")` (in my case).
 
+## Create a Virtual Environment and install your requirements
+
+In the PythonAnywhere console: `mkvirtualenv venv --python=/usr/bin/python3.13`. In this case we called the virtual environment `venv` so it will be stored in `/home/<username>/.virtualenvs/venv/` or `/home/jasonqut/.virtualenvs/venv/` in my case. You need to remember the location for a later step, so perhaps navigate to ``/home/<username>/.virtualenvs/` and take a look that it is present before writing down the path for use later.
+
+Note how your console prompt now begins with `> (venv)`. This is because the Virtual Environment was enabled automatically after installation so that you can begin installing your requirements
+
+Next, install your requirements using pip
+```
+pip install flask werkzeug flask-wtf bootstrap-flask flask-sqlalchemy flask-login email-validator flask-bcrypt numpy dotenv huggingface_hub
+```
+You can now create your web application instance on PythonAnywhere
+
+## Create Web App instance using PythonAnywhere dashboard
+
+
+
 
 
 

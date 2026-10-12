@@ -6,6 +6,8 @@
 - **Deploy a non-AI version of the site first**. Follow the instructions available on Canvas and deploy a dynamic website that does not include the AI features. This initial step will allow you to build knowledge incrementally.
 - **Ensure that your application is fully functional when running locally using the HF Inference Connection ([see here](https://github.com/IAB207-QUT/iab207/blob/main/week12_final/hf_setup_inference.md))**. Troubleshooting during deployment can be difficult because access to logs is limited and the deployment interface is not particularly user-friendly. Verify that all functionality (including AI functionality using HF Inference Connection) works correctly before attempting deployment.
 
+See the [related video](https://mediahub.qut.edu.au/media/t/0_2w2tt130) - 16 minutes
+
 ## Create a PythonAnywhere account and upload your files
 
 - **Create your account**. Hopefully you followed the advice to initially deploy a non-AI version of your dynamic website so you already have a [PythonAnywhere](https://www.pythonanywhere.com/) account. If not, you should create one.

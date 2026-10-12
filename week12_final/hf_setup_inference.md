@@ -8,7 +8,7 @@
 
 - **Generate as many embeddings as possible while developing locally.** In particular, create and store all event / description embeddings that will be used for similarity comparisons before deploying. The HF Inference Provider incurs usage costs (albeit relatively small), so it is both more efficient and economical to perform bulk embedding generation locally during development.
 
-See [related video](https://mediahub.qut.edu.au/media/t/0_e0ts3l00) - 16 minutes
+See the [related video](https://mediahub.qut.edu.au/media/t/0_e0ts3l00) - 16 minutes
 
 ## Obtain your HF Token
 

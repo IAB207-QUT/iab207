@@ -8,7 +8,7 @@
 
 - **Generate as many embeddings as possible while developing locally.** In particular, create and store all event / description embeddings that will be used for similarity comparisons before deploying. The HF Inference Provider incurs usage costs (albeit relatively small), so it is both more efficient and economical to perform bulk embedding generation locally during development.
 
-See [related video](https://canvas.qut.edu.au/courses/24547/pages/deploying-a-flask-app-to-pythonanywhere?module_item_id=2382582#:~:text=up%20the%20Hugging%20Face%20(HF)%20Inference%20Connection%0A(-,video%2016m,-%7C%20written%20steps)
+See [related video](https://mediahub.qut.edu.au/media/t/0_e0ts3l00) - 16 minutes
 
 ## Obtain your HF Token
 
